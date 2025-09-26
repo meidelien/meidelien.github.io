@@ -30,7 +30,7 @@ author:
   location         : "Brisbane, Australia"
   employer         : "University of Bergen"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : # "none@example.org" 
 
   # Academic websites
   academia         : # URL
@@ -219,7 +219,7 @@ kramdown:
 # These settings control the types of collections used by the template
 collections:
   teaching:
-    output: true
+    output: false
     permalink: /:collection/:path/
   publications:
     output: true
@@ -228,7 +228,7 @@ collections:
     output: true
     permalink: /:collection/:path/
   talks:
-    output: true
+    output: false
     permalink: /:collection/:path/
 
 
