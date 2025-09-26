@@ -14,13 +14,12 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          persist-credentials: true  # keep GITHUB_TOKEN for push
+          persist-credentials: true   # uses GITHUB_TOKEN for push
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -43,16 +42,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Stage & commit whatever changed
           git add -A
           git commit -m "Automated update of talk locations" || echo "No changes to commit"
 
-          # Make sure we're up to date to avoid non-fast-forward
-          git pull --rebase origin "$BRANCH" || {
-            echo "Rebase failed; aborting rebase and exiting"; 
-            git rebase --abort || true
-            exit 1
-          }
+          git fetch origin
+          git pull --rebase origin "$BRANCH" || { git rebase --abort || true; exit 1; }
 
-          # Push to the same branch that triggered the workflow
           git push origin HEAD:"$BRANCH"
