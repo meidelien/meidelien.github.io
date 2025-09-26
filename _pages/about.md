@@ -13,6 +13,7 @@ This is the front page of a website that is powered by the [Academic Pages templ
 
 
 ![alt text](/images/image.png "screenshot of academic pages template")
+![alt text](/images/profile.png "screenshot of academic pages template")
 
 A data-driven personal website
 ======
