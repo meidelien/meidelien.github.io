@@ -11,18 +11,26 @@ redirect_from:
 
 Contact
 ======
-* **Martin Eide Lien**  
-  Bergen, Norway · +47 452 44 502  
- [GitHub](https://github.com/meidelien) · [LinkedIn](https://www.linkedin.com/in/martin-lien-1a355650)
+* **Martin Eide Lien**
+* [GitHub](https://github.com/meidelien) · [LinkedIn](https://www.linkedin.com/in/martin-lien-1a355650)
+*  Bergen, Norway (UiB) · Brisbane, Australia (QIMR) 
+ 
 
 Education
 ======
 * **Ph.D. Candidate**, University of Bergen — *June 2023–present*  
-  **Project title:** *Spatial Characterization and Understanding of the Cancer Stem Cell Niche in Triple-Negative Breast Cancer*  
+  **Project title:** *AdiFind*  
   **Supervisor:** Nils Henrik Halberg
 
+* **Visiting PhD Student**, Queensland Institute of Medical Research  — *May 2025 - present*  
+   
+  **Host lab:** Cancer Metabolism   
+  **Project title:** *AdiFind*  
+  **Collaborators:** Khoa Tran
+
 * **M.Sc., Biotechnology**, Norwegian University of Science and Technology — *September 2022*  
-  **Grade:** B  
+  **Thesis:** *Metabolic network layout using biochemical coordinates*  
+    **Supervisor:** Daniel Machado
   **Main courses:** Bioinformatics, Cheminformatics, Computational Biology, AI, Molecular & Synthetic Biology, Molecular Medicine, Aquaculture, Data Analysis & Visualization
 
 Publications
@@ -32,9 +40,10 @@ Publications
   – Created a computer‑vision model to measure, quantify, and characterize adipocytes in multiplexed imaging modalities in a stain‑agnostic manner.  
   – Enabled proximal classification of “small” vs. “large” adipocytes per patient in multiplexed datasets that lack other measures of adiposity.
 
-* **AdiFind: automated adipocyte quantification and measurements using computer vision in whole‑slide imaging.** *Unpublished*.  
+* **AdiFind: WIP** *Unpublished*.  
   **M. E. Lien**, K. Tran, N. H. Halberg.  
-  – Software tool using computer vision to process whole‑slide images and automatically segment, quantify, and measure individual adipocytes without user input.
+  – Software tool using mask R-CNN (X101 architecture) to process 100++ gigapixel whole‑slide images and automatically segment, quantify, and measure individual adipocytes, tumors, and other tissue structures.  
+  – Implemented using Detectron2 and trained on manually annotated images of human and mouse adipose tissue. 
 
 Work experience
 ======
@@ -70,8 +79,8 @@ Skills
 ======
 * **Programming:** Python, Julia, R, Lua, JavaScript, MATLAB  
 * **Documentation:** LaTeX, Markdown, HTML  
-* **Software tools:** PyTorch, TensorFlow, scikit‑learn, AlphaFold, RDKit, Biopython, Cytoscape, Escher, COBRApy, ReFramed, Benchling, Nextflow, Snakemake, OpenCV  
-* **Dry‑lab:** Biological networks, pathway enrichment analysis, systems modeling, genome assembly & annotation, plasmid design, molecular‑descriptor calculation, flow‑cytometry data analysis & processing  
+* **Software tools:** PyTorch, TensorFlow, scikit‑learn, AlphaFold, RDKit, Biopython, Cytoscape, Escher, COBRApy, ReFramed, Benchling, Nextflow, Snakemake, OpenCV, Detectron2  
+* **Dry‑lab:** Biological networks, pathway enrichment analysis, systems modeling, genome assembly & annotation, plasmid design, molecular‑descriptor calculation, flow‑cytometry data analysis & processing 
 * **Wet‑lab:** Cloning, media preparation, plasmid amplification, basic microfluidics, experimental design, protein labeling, dissection  
 * **Languages:** Norwegian (native), English (fluent), French (beginner)  
 * **Other:** Science communication & outreach, digital image & video analysis, video editing, Blender, graphic design, computer hardware, information technology
