@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About - Martin Eide Lien"
+title: "About"
 author_profile: true
 redirect_from: 
   - /about/
@@ -16,7 +16,7 @@ What I'm into
 ------
 
 - Making software tools that help me and others do better research
-- Clean, repeatable analysis (notebooks, pipelines, "it just runs")
+- Clean, repeatable analysis tools ("it just runs")
 - Visuals that tell the story without a lecture
 
 Current focus

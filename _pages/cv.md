@@ -29,7 +29,7 @@ Education
 
 * **M.Sc., Biotechnology**, Norwegian University of Science and Technology — *September 2022*  
   **Thesis:** *Metabolic network layout using biochemical coordinates*  
-    **Supervisor:** Daniel Machado
+  **Supervisor:** Daniel Machado
   **Main courses:** Bioinformatics, Cheminformatics, Computational Biology, AI, Molecular & Synthetic Biology, Molecular Medicine, Aquaculture, Data Analysis & Visualization
 
 Publications
