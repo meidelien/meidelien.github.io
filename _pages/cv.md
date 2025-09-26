@@ -29,7 +29,7 @@ Education
 
 * **M.Sc., Biotechnology**, Norwegian University of Science and Technology — *September 2022*  
   **Thesis:** *Metabolic network layout using biochemical coordinates*  
-  **Supervisor:** Daniel Machado
+  **Supervisor:** Daniel Machado  
   **Main courses:** Bioinformatics, Cheminformatics, Computational Biology, AI, Molecular & Synthetic Biology, Molecular Medicine, Aquaculture, Data Analysis & Visualization
 
 Publications
@@ -53,8 +53,9 @@ Work experience
 * **iGEM Team Member — Sulfind**, NTNU, Trondheim, Norway — *Mar 2020–Nov 2021*  
   – Developed a biosensor for detection of sublethal H₂S in water for early intervention in land‑based fish farms.  
   – Secured **250,000 NOK** in industry funding; awarded **Silver medal** and the **iGEM Team Impact Grant (USD 2,500)**, Paris, France.  
-  – Led genetic engineering, experimental design, multimedia, and web design; created a bacterial fluorescent LOV‑based signal generator functional without molecular oxygen.  
-  – Links: [Team page](https://2021.igem.org/Team:NTNU-Trondheim) · [BBa_K3762010](http://parts.igem.org/Part:BBa_K3762010)
+  – Led genetic engineering, experimental design, multimedia, and web design.
+  - Created a bacterial fluorescent LOV‑based signal generator functional without molecular oxygen.  
+  – Links: [Team page](https://2021.igem.org/Team:NTNU-Trondheim) · [BioBRick BBa_K3762010](http://parts.igem.org/Part:BBa_K3762010)
 
 * **iGEM Team Leader — Sal.Coli**, University of Oslo (Trondheim/Oslo, Norway) — *May 2020–Nov 2020*  
   – Built an automated detection and treatment system for amoebic gill disease in Atlantic salmon.  
