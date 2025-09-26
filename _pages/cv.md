@@ -23,7 +23,6 @@ Education
   **Supervisor:** Nils Henrik Halberg
 
 * **Visiting PhD Student**, Queensland Institute of Medical Research  — *May 2025 - present*  
-   
   **Host lab:** Cancer Metabolism   
   **Project title:** *AdiFind*  
   **Collaborators:** Khoa Tran
