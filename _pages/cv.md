@@ -70,7 +70,7 @@ Projects
   – Evaluated combinations of chemical features that convey biological information and yield legible visualizations.
 
 * **Hjernemoser (working title)** — *Educational board game, November 2018*  
-  – Conceptualized and prototyped (Feb 2016). Sponsored by the Moser Laboratory and NTNU Department of Neuromedicine.  
+  – Conceptualized and prototyped (Feb 2016). Sponsored by the Moser Laboratory (Awardee of the Nobel Prize in Physiology or Medicine, 2014) and NTNU Department of Neuromedicine.  
   – Presented at **Neuroscience 2018** (Society for Neuroscience, San Diego) with the Dana Foundation as proxy.  
   – Considered for distribution as educational material for **Brain Awareness Week** (global outreach in 120 countries).
 
