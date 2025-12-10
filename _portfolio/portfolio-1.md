@@ -1,5 +1,5 @@
 ---
-title: "Project 1"
+title: "AdiFind"
 excerpt: "<em>Coming soon</em><br/><img src='/images/adifind_logo_cropped.png' width='300'>"
 collection: portfolio
 ---
