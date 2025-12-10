@@ -7,23 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I'm Martin Eide Lien.
-------
+I'm a PhD student at the University of Bergen working on digital histopathology in cancer biology.
 
-I'm a PhD student at the University of Bergen doing a digital histopathology project in cancer biology.
-
-What I'm into
-------
-
-- Making software tools that help me and others do better research
-- Clean, repeatable analysis tools ("it just runs")
-- Visuals that tell the story without a lecture
-
-Current focus
-------
-
-- Tumors chatting with nearby fat cells (CAAs)
-- Stemness + metabolism vibes at the tumor edge
+I build software tools for research, focusing on clean, repeatable analysis that just works. My current project looks at how tumors interact with nearby fat cells (CAAs) and how stemness and metabolism relate at the fat-tumor edge.
 
 
 
