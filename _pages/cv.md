@@ -24,8 +24,8 @@ Education
 
 * **Visiting PhD Student**, Queensland Institute of Medical Research  — *May 2025 - present*  
   **Host lab:** Cancer Metabolism   
-  **Project title:** *AdiFind*  
-  **Friend, fellow nerd and collaborator:** Khoa Tran
+  **Project title:** *AdiFind*    
+  **Friend, fellow nerd & collaborator:** Khoa Tran
 
 * **M.Sc., Biotechnology**, Norwegian University of Science and Technology — *September 2022*  
   **Thesis:** *Metabolic network layout using biochemical coordinates*  
