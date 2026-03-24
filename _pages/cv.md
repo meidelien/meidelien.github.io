@@ -18,31 +18,32 @@ Contact
 
 Education
 ======
-* **Ph.D. Candidate**, University of Bergen - *June 2023-present*  
+* **Ph.D. Candidate**, University of Bergen, Norway - *June 2023-present*  
   **Project title:** *Computer vision-based analysis of adipocyte-tumour associations*  
   **Supervisor:** Nils Henrik Halberg
 
-* **Visiting PhD Student**, Queensland Institute of Medical Research - *May 2025-present*  
+* **Visiting PhD Student**, Queensland Institute of Medical Research, Australia - *May 2025-present*  
   **Host lab:** Cancer Metabolism  
   **Project title:** *Computer vision-based analysis of adipocyte-tumour associations*  
   **Friend, fellow nerd & collaborator:** Khoa Tran
 
-* **M.Sc., Biotechnology**, Norwegian University of Science and Technology - *September 2022*  
+* **M.Sc., Biotechnology**, Norwegian University of Science and Technology, Norway - *September 2022*  
   **Thesis:** *Metabolic network layout using biochemical coordinates*  
   **Supervisor:** Daniel Machado  
   **Main courses:** Bioinformatics, Cheminformatics, Computational Biology, AI, Molecular and Synthetic Biology, Molecular Medicine, Aquaculture, Data Analysis and Visualization
 
 Publications
 ======
+* **Computer vision-based analysis of adipocyte-tumour associations reveal tumour type- and obesity-specific adaptation.** *Unpublished*.  
+  **M. E. Lien**, G. Hartel, K. K. Tran, N. Waddell, K. Bouttle, T. O'Mara, N. Halberg.  
+  - A large-scale computational pathology study of adipocyte-tumour spatial associations across tumour types using computer vision-based adipocyte quantification in whole-slide imaging.  
+
 * **Interactions between neutrophils and macrophages harboring gram-negative bacteria promote obesity-associated breast cancer.** *Cancer Cell* (in review), 2024.  
   S. T. Takle, S. M. Grondal, **M. E. Lien**, P. Lianto, W. Deng, R. K. Lillestol, P. Lonning, J. B. Lorens, S. Knappskog, N. H. Halberg.  
   - Created a computer vision model that measured, quantified, and characterized adipocytes in multiplexed imaging modalities in a stain-agnostic manner.  
   - Enabled proximal classification of "small" and "large" adipocytes for individual patients in multiplexed datasets that lack other measures of adiposity.
 
-* **Computer vision-based analysis of adipocyte-tumour associations reveal tumour type- and obesity-specific adaptation.** *Unpublished*.  
-  **M. E. Lien**, G. Hartel, K. K. Tran, N. Waddell, K. Bouttle, T. O'Mara, N. Halberg.  
-  - A large-scale computational pathology study of adipocyte-tumour spatial associations across tumour types using computer vision-based adipocyte quantification in whole-slide imaging.  
-  - Showed that the prognostic signal was breast cancer-specific and strongest in postmenopausal patients, particularly those with obesity.
+
 
 Work experience
 ======
@@ -80,7 +81,7 @@ Selected conference presentations
   - Rapid-Fire Presentation, ENDO 2026, Annual Meeting of the Endocrine Society, Chicago, IL, USA, June 13-16, 2026.  
   - Selected by the Annual Meeting Steering Committee for a Rapid-Fire presentation.  
   - Presented results from large-scale spatial adipocyte phenotyping across 21,968 digital slides and more than 75 million adipocytes measured across 12 cancer types.  
-  - Demonstrated that tumor-proximal adipocyte size is a breast cancer-specific prognostic marker, with the strongest performance in postmenopausal patients with obesity, and validated the findings in ABCTB.
+  - Demonstrated that tumor-proximal adipocyte size is a breast cancer-specific prognostic marker, with the strongest performance in postmenopausal patients and postmenopausal patients with obesity, and validated the findings in the Australian Breast Cancer Tissue Bank.
 
 
 Skills
