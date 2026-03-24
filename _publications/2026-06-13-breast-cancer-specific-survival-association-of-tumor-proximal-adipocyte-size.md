@@ -6,7 +6,7 @@ permalink: /publication/breast-cancer-specific-survival-association-of-tumor-pro
 excerpt: "Accepted ENDO 2026 presentation on large-scale spatial adipocyte phenotyping across 12 cancer types with validation in the Australian Breast Cancer Tissue Bank."
 date: 2026-06-13
 venue: "ENDO 2026, Annual Meeting of the Endocrine Society, Chicago, IL, USA"
-pubstatus: "accepted presentation"
+pubstatus: "Accepted Rapid-Fire presentation"
 event_dates: "June 13-16, 2026"
 ---
 

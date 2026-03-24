@@ -13,18 +13,42 @@ author_profile: true
 
 {% if site.publication_category %}
   {% for category in site.publication_category %}
-    {% assign posts_in_category = site.publications | where: "category", category[0] | sort: "date" | reverse %}
-    {% if posts_in_category.size > 0 %}
-      <h2>{{ category[1].title }}</h2>
-      <hr />
-      {% for post in posts_in_category %}
+    {% assign title_shown = false %}
+    {% assign publications = site.publications | sort: "date" | reverse %}
+    {% for post in publications %}
+      {% assign status = post.pubstatus | default: "" | downcase %}
+      {% assign status_allowed = false %}
+      {% if status contains "accepted" %}
+        {% assign status_allowed = true %}
+      {% elsif status contains "published" %}
+        {% unless status contains "unpublished" %}
+          {% assign status_allowed = true %}
+        {% endunless %}
+      {% endif %}
+      {% if post.category == category[0] and status_allowed %}
+        {% unless title_shown %}
+          <h2>{{ category[1].title }}</h2>
+          <hr />
+          {% assign title_shown = true %}
+        {% endunless %}
         {% include archive-single.html %}
-      {% endfor %}
-    {% endif %}
+      {% endif %}
+    {% endfor %}
   {% endfor %}
 {% else %}
   {% assign publications = site.publications | sort: "date" | reverse %}
   {% for post in publications %}
-    {% include archive-single.html %}
+    {% assign status = post.pubstatus | default: "" | downcase %}
+    {% assign status_allowed = false %}
+    {% if status contains "accepted" %}
+      {% assign status_allowed = true %}
+    {% elsif status contains "published" %}
+      {% unless status contains "unpublished" %}
+        {% assign status_allowed = true %}
+      {% endunless %}
+    {% endif %}
+    {% if status_allowed %}
+      {% include archive-single.html %}
+    {% endif %}
   {% endfor %}
 {% endif %}
