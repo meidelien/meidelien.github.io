@@ -1,0 +1,15 @@
+{% assign item = include.item %}
+{% if item.category == 'conferences' %}
+  <p>
+    {% if item.pubstatus %}{{ item.pubstatus | capitalize }}{% endif %}
+    {% if item.pubstatus and item.venue %}, {% endif %}
+    {% if item.venue %}<i>{{ item.venue }}</i>{% endif %}
+    {% if item.event_dates %}, {{ item.event_dates }}{% endif %}
+  </p>
+{% elsif item.venue and item.date %}
+  <p><i>{{ item.venue }}</i>{% if item.pubstatus %} ({{ item.pubstatus }}){% endif %}, {{ item.date | date: "%Y" }}</p>
+{% elsif item.venue %}
+  <p><i>{{ item.venue }}</i>{% if item.pubstatus %} ({{ item.pubstatus }}){% endif %}</p>
+{% elsif item.date %}
+  <p>{{ item.date | date: "%Y" }}</p>
+{% endif %}

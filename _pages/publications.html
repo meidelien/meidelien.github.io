@@ -11,36 +11,20 @@ author_profile: true
 
 {% include base_path %}
 
-<h2>Journal Articles</h2>
-<hr />
-<p><em>Nothing here yet.</em></p>
-
-<h2>Conference Papers</h2>
-<hr />
-<p><em>Nothing here yet.</em></p>
-
-<!-- Template for future use - uncomment when you have publications -->
-<!-- 
 {% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
+  {% for category in site.publication_category %}
+    {% assign posts_in_category = site.publications | where: "category", category[0] | sort: "date" | reverse %}
+    {% if posts_in_category.size > 0 %}
+      <h2>{{ category[1].title }}</h2>
+      <hr />
+      {% for post in posts_in_category %}
+        {% include archive-single.html %}
+      {% endfor %}
+    {% endif %}
   {% endfor %}
 {% else %}
-  {% for post in site.publications reversed %}
+  {% assign publications = site.publications | sort: "date" | reverse %}
+  {% for post in publications %}
     {% include archive-single.html %}
   {% endfor %}
 {% endif %}
--->
-
-
-
