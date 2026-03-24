@@ -4,7 +4,6 @@
     {% if item.pubstatus %}{{ item.pubstatus }}{% endif %}
     {% if item.pubstatus and item.venue %}, {% endif %}
     {% if item.venue %}<i>{{ item.venue }}</i>{% endif %}
-    {% if item.event_dates %}, {{ item.event_dates }}{% endif %}
   </p>
 {% elsif item.venue and item.date %}
   <p><i>{{ item.venue }}</i>{% if item.pubstatus %} ({{ item.pubstatus }}){% endif %}, {{ item.date | date: "%Y" }}</p>
