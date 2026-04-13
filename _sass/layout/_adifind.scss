@@ -81,6 +81,12 @@
   padding: 1rem;
 }
 
+.adifind-process__body {
+  @include breakpoint($medium) {
+    min-height: 12.5rem;
+  }
+}
+
 .adifind-process__step {
   margin-bottom: 0.5rem;
   font-size: $type-size-7;
