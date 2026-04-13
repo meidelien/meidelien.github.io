@@ -1,0 +1,34 @@
+{% include base_path %}
+
+{% assign adifind_entries = site.data.adifind %}
+
+<section class="adifind-grid" aria-label="AdiFind examples">
+  {% for entry in adifind_entries %}
+    {% if entry.image_path contains "://" %}
+      {% assign entry_image = entry.image_path %}
+    {% else %}
+      {% assign entry_image = entry.image_path | prepend: base_path %}
+    {% endif %}
+
+    {% if entry.svs_path contains "://" %}
+      {% assign entry_svs = entry.svs_path %}
+    {% else %}
+      {% assign entry_svs = entry.svs_path | prepend: base_path %}
+    {% endif %}
+
+    <article class="adifind-card">
+      <figure class="adifind-card__media">
+        <img src="{{ entry_image }}" alt="{{ entry.image_alt }}">
+        {% if entry.caption %}
+          <figcaption>{{ entry.caption }}</figcaption>
+        {% endif %}
+      </figure>
+
+      <div class="adifind-card__body">
+        <h2 class="adifind-card__title">{{ entry.title }}</h2>
+        <p>{{ entry.description }}</p>
+        <p><a class="btn btn--info" href="{{ entry_svs }}">{{ entry.svs_label }}</a></p>
+      </div>
+    </article>
+  {% endfor %}
+</section>
