@@ -5,7 +5,7 @@ downloads:
   validation_zip:
     label: "Download example results"
     path: "/files/adifind/K106942_AdiFind.zip"
-K106942_AdiFind
+
 processing_section:
   workflow_panels:
     - title: "Whole-slide image pyramid"
