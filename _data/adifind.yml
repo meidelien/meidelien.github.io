@@ -1,23 +1,42 @@
-- title: "AdiFind GUI overview"
-  description: "Overview of the AdiFind interface used to inspect whole-slide images and navigate adipocyte-focused analysis regions."
-  image_path: "/images/adifind/paper_adifind_GUI.png"
-  image_alt: "Screenshot of the AdiFind graphical user interface."
-  svs_path: "/files/adifind/K106942.svs"
-  svs_label: "Download example .svs"
-  caption: "GUI view from the AdiFind workflow."
+downloads:
+  svs:
+    label: "Download example .svs"
+    path: "/files/adifind/K106942.svs"
+  validation_zip:
+    label: "Download validation package"
+    path: "/files/adifind/K106942_AdiFind_example_results.zip"
 
-- title: "ROI tool demonstration"
-  description: "Demonstration of how the slide looks when using the ROI tool to define a freehand region for analysis."
-  image_path: "/images/adifind/paper_ROI_frehand.png"
-  image_alt: "Freehand ROI tool demonstration in AdiFind before annotations are applied."
-  svs_path: "/files/adifind/K106942.svs"
-  svs_label: "Download source .svs"
-  caption: "Demonstration of the ROI tool in use."
+process_flow:
+  - title: "Tissue detection"
+    image_path: "/images/adifind/tissue_detection.png"
+    image_alt: "Detected tissue boundary drawn over the example whole-slide image."
+    caption: "Identify the tissue area that will be processed."
 
-- title: "Results demonstration"
-  description: "Demonstration of the analysis output, showing how the same ROI looks once the annotation results have been generated."
-  image_path: "/images/adifind/paper_ROI_frehand_annotated.png"
-  image_alt: "Annotated ROI demonstration showing AdiFind analysis results."
-  svs_path: "/files/adifind/K106942.svs"
-  svs_label: "Download source .svs"
-  caption: "Demonstration of the resulting annotated output."
+  - title: "Tissue window grid"
+    image_path: "/images/adifind/k106942_tissue_window_grid.png"
+    image_alt: "Detected tissue area overlaid with the AdiFind processing grid."
+    caption: "Split the tissue into analysis windows for downstream processing."
+
+  - title: "Annotated output"
+    image_path: "/images/adifind/k106942_adifind_annotated.png"
+    image_alt: "Final AdiFind annotated output for the example slide."
+    caption: "Render the finished annotated result for review and validation."
+
+details:
+  - title: "AdiFind GUI overview"
+    description: "Overview of the AdiFind interface used to inspect whole-slide images and run the processing workflow."
+    image_path: "/images/adifind/paper_adifind_GUI.png"
+    image_alt: "Screenshot of the AdiFind graphical user interface."
+    caption: "GUI view from the AdiFind workflow."
+
+  - title: "QuPath overview"
+    description: "Whole-slide QuPath view showing the imported AdiFind annotations across the processed tissue region."
+    image_path: "/images/adifind/AdiFind_QuPath_demo.png"
+    image_alt: "QuPath overview displaying imported AdiFind annotations on the example slide."
+    caption: "Whole-slide validation view in QuPath."
+
+  - title: "QuPath zoomed validation"
+    description: "Zoomed QuPath view showing individual adipocyte boundaries and labels for closer inspection of the exported results."
+    image_path: "/images/adifind/AdiFind_QuPath_demo_zoomed_in.png"
+    image_alt: "Zoomed QuPath view showing individual AdiFind adipocyte annotations."
+    caption: "Zoomed validation view in QuPath."

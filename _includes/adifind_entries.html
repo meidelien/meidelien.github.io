@@ -1,16 +1,48 @@
-{% assign adifind_entries = site.data.adifind %}
-{% assign lead_entry = adifind_entries | first %}
+{% assign process_flow = site.data.adifind.process_flow %}
+{% assign details = site.data.adifind.details %}
+{% assign lead_detail = details | first %}
 
-{% if lead_entry %}
-  <section class="adifind-grid adifind-grid--lead" aria-label="AdiFind overview">
-    {% include adifind_card.html entry=lead_entry %}
+{% if process_flow and process_flow.size > 0 %}
+  <section class="adifind-section" aria-label="AdiFind processing flow">
+    <h2 class="adifind-section__title">Processing flow</h2>
+    <div class="adifind-process">
+      {% for step in process_flow %}
+        {% include base_path %}
+
+        {% if step.image_path contains "://" %}
+          {% assign step_image = step.image_path %}
+        {% else %}
+          {% assign step_image = step.image_path | prepend: base_path %}
+        {% endif %}
+
+        <article class="adifind-process__item">
+          <figure class="adifind-process__media">
+            <img src="{{ step_image }}" alt="{{ step.image_alt }}">
+          </figure>
+          <div class="adifind-process__body">
+            <p class="adifind-process__step">Step {{ forloop.index }}</p>
+            <h3 class="adifind-process__title">{{ step.title }}</h3>
+            <p>{{ step.caption }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
   </section>
 {% endif %}
 
-{% if adifind_entries.size > 1 %}
-  <section class="adifind-grid adifind-grid--demo" aria-label="AdiFind demonstrations">
-    {% for entry in adifind_entries offset:1 %}
-      {% include adifind_card.html entry=entry %}
-    {% endfor %}
+{% if lead_detail %}
+  <section class="adifind-section" aria-label="AdiFind workflow details">
+    <h2 class="adifind-section__title">Workflow and validation views</h2>
+    <div class="adifind-grid adifind-grid--lead">
+      {% include adifind_card.html entry=lead_detail %}
+    </div>
+
+    {% if details.size > 1 %}
+      <div class="adifind-grid adifind-grid--qupath">
+        {% for entry in details offset:1 %}
+          {% include adifind_card.html entry=entry %}
+        {% endfor %}
+      </div>
+    {% endif %}
   </section>
 {% endif %}

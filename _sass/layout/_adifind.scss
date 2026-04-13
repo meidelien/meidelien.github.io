@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .adifind-page__intro {
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   font-size: 1.05rem;
 }
 
@@ -14,23 +14,32 @@
   margin: 0 0 1.5rem;
 }
 
-.adifind-grid {
+.adifind-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.adifind-section {
+  margin-top: 2.5rem;
+}
+
+.adifind-section__title {
+  margin-bottom: 1rem;
+}
+
+.adifind-process {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  margin-top: 2rem;
-}
 
-.adifind-grid--lead {
-  max-width: 36rem;
-}
-
-.adifind-grid--demo {
   @include breakpoint($medium) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
+.adifind-process__item,
 .adifind-card {
   display: flex;
   flex-direction: column;
@@ -42,6 +51,7 @@
   box-shadow: 0 8px 24px rgba(#000, 0.08);
 }
 
+.adifind-process__media,
 .adifind-card__media {
   margin: 0;
   background: mix(#fff, #000, 96%);
@@ -51,7 +61,49 @@
     width: 100%;
     height: auto;
   }
+}
 
+.adifind-process__body,
+.adifind-card__body {
+  padding: 1rem;
+}
+
+.adifind-process__step {
+  margin-bottom: 0.5rem;
+  font-size: $type-size-7;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+}
+
+.adifind-process__title,
+.adifind-card__title {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.adifind-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.adifind-grid--lead {
+  max-width: 36rem;
+}
+
+.adifind-grid--qupath {
+  margin-top: 1.5rem;
+
+  @include breakpoint($medium) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.adifind-card__media {
   figcaption {
     padding: 0.75rem 1rem 0;
     font-size: $type-size-7;
@@ -63,17 +115,8 @@
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  padding: 1rem;
 
   p:last-child {
-    margin-top: auto;
     margin-bottom: 0;
   }
-}
-
-.adifind-card__title {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-  padding-bottom: 0;
-  border-bottom: 0;
 }
