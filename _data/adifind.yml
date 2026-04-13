@@ -4,8 +4,8 @@ downloads:
     path: "/files/adifind/K106942.svs"
   validation_zip:
     label: "Download example results"
-    path: "/files/adifind/K106942_AdiFind_example_results.zip"
-
+    path: "/files/adifind/K106942_AdiFind.zip"
+K106942_AdiFind
 processing_section:
   workflow_panels:
     - title: "Whole-slide image pyramid"
@@ -32,7 +32,7 @@ processing_section:
     title: "Annotated whole-slide output"
     image_path: "/images/adifind/Asset 29@4x.png"
     image_alt: "Annotated whole-slide image with tumour and adipose tissue context."
-    description: "Review the exported annotated whole-slide image overlay in tumour and adipose tissue context before downstream validation."
+    description: "This annotated whole-slide image is the primary visual output of AdiFind, providing tumour and adipose tissue context for review and downstream validation."
 
 details:
   gui_overview:
