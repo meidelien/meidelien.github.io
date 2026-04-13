@@ -15,7 +15,7 @@ hide_title: true
     src="{{ '/images/adifind_logo_cropped.png' | relative_url }}"
     alt="AdiFind logo">
 
-  AdiFind is research software for tumour-adjacent adipose analysis on whole-slide histology images. Pre-release example results and downloads are available below and can be inspected in the QuPath viewer. More information about AdiFind will appear in the near future, but for now please contact me at martin.lien@uib.no if you would like to know more or are interested in collaborating.
+  AdiFind is research software for tumour-adjacent adipose analysis on whole-slide histology images. Pre-release example results and downloads are available below and can be inspected in the QuPath viewer. More information about AdiFind will appear soon. For questions or collaboration, please contact me at martin [dot] lien [at] uib [dot] no.
 </div>
 
 {% include adifind_entries.html %}
