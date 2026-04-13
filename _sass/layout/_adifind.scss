@@ -50,6 +50,10 @@
   margin-top: 2.5rem;
 }
 
+.adifind-section--lead-output {
+  margin-top: 1.5rem;
+}
+
 .adifind-section__title {
   margin-bottom: 1rem;
 }
@@ -74,8 +78,6 @@
 }
 
 .adifind-process--workflow {
-  margin-top: 1.5rem;
-
   @include breakpoint($medium) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

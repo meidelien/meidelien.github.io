@@ -7,40 +7,42 @@
 {% assign qupath_demo = details.qupath_demo %}
 {% assign qupath_workflow_example = details.qupath_workflow_example %}
 
+{% if annotated_panel %}
+  {% include base_path %}
+
+  {% if annotated_panel.image_path contains "://" %}
+    {% assign annotated_panel_image = annotated_panel.image_path %}
+  {% else %}
+    {% assign annotated_panel_image = annotated_panel.image_path | prepend: base_path %}
+  {% endif %}
+
+  <section class="adifind-section adifind-section--lead-output" aria-label="AdiFind annotated whole-slide output">
+    <div class="adifind-process adifind-process--annotated">
+      <article class="adifind-process__item adifind-process__item--wide adifind-process__item--annotated">
+        <div class="adifind-process__body adifind-process__body--annotated">
+          <h3 class="adifind-process__title">{{ annotated_panel.title }}</h3>
+          {% if annotated_panel.description %}
+            <p class="adifind-process__caption">{{ annotated_panel.description }}</p>
+          {% endif %}
+        </div>
+        <figure class="adifind-process__media">
+          <button
+            type="button"
+            class="adifind-lightbox-trigger"
+            aria-label="View {{ annotated_panel.title | default: annotated_panel.image_alt | escape }} larger"
+            data-image-src="{{ annotated_panel_image }}"
+            data-image-alt="{{ annotated_panel.image_alt | escape }}">
+            <img src="{{ annotated_panel_image }}" alt="{{ annotated_panel.image_alt }}">
+          </button>
+        </figure>
+      </article>
+    </div>
+  </section>
+{% endif %}
+
 {% if workflow_panels and workflow_panels.size > 0 %}
   <section class="adifind-section" aria-label="AdiFind processing flow">
     <h2 class="adifind-section__title">Processing flow</h2>
-    {% if annotated_panel %}
-      {% include base_path %}
-
-      {% if annotated_panel.image_path contains "://" %}
-        {% assign annotated_panel_image = annotated_panel.image_path %}
-      {% else %}
-        {% assign annotated_panel_image = annotated_panel.image_path | prepend: base_path %}
-      {% endif %}
-
-      <div class="adifind-process adifind-process--annotated">
-        <article class="adifind-process__item adifind-process__item--wide adifind-process__item--annotated">
-          <div class="adifind-process__body adifind-process__body--annotated">
-            <h3 class="adifind-process__title">{{ annotated_panel.title }}</h3>
-            {% if annotated_panel.description %}
-              <p class="adifind-process__caption">{{ annotated_panel.description }}</p>
-            {% endif %}
-          </div>
-          <figure class="adifind-process__media">
-            <button
-              type="button"
-              class="adifind-lightbox-trigger"
-              aria-label="View {{ annotated_panel.title | default: annotated_panel.image_alt | escape }} larger"
-              data-image-src="{{ annotated_panel_image }}"
-              data-image-alt="{{ annotated_panel.image_alt | escape }}">
-              <img src="{{ annotated_panel_image }}" alt="{{ annotated_panel.image_alt }}">
-            </button>
-          </figure>
-        </article>
-      </div>
-    {% endif %}
-
     <div class="adifind-process adifind-process--workflow">
       {% for panel in workflow_panels %}
         {% include base_path %}
