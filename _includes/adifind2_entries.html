@@ -1,0 +1,304 @@
+{% include base_path %}
+
+{% assign adifind = site.data[page.adifind_data_key] %}
+{% assign hero = adifind.hero %}
+{% assign proof_strip = adifind.proof_strip %}
+{% assign overview = adifind.overview %}
+{% assign outputs = adifind.outputs %}
+{% assign showcase = adifind.showcase %}
+{% assign featured_panel = showcase.featured_panel %}
+{% assign integration_panel = showcase.integration_panel %}
+{% assign processing_section = adifind.processing_section %}
+{% assign workflow_fit = adifind.workflow_fit %}
+{% assign gui_overview = workflow_fit.gui_overview %}
+{% assign roi_demo = workflow_fit.roi_demo %}
+{% assign qupath_demo = workflow_fit.qupath_demo %}
+{% assign validation = adifind.validation %}
+{% assign downloads = adifind.downloads %}
+{% assign footer_cta = adifind.footer_cta %}
+{% assign contact_email = footer_cta.email_parts.user | append: '@' | append: footer_cta.email_parts.domain %}
+
+{% assign primary_cta_first_char = hero.primary_cta.path | slice: 0, 1 %}
+{% if hero.primary_cta.path contains "://" %}
+  {% assign primary_cta_href = hero.primary_cta.path %}
+{% elsif primary_cta_first_char == "#" %}
+  {% assign primary_cta_href = hero.primary_cta.path %}
+{% else %}
+  {% assign primary_cta_href = hero.primary_cta.path | relative_url %}
+{% endif %}
+
+{% assign secondary_cta_first_char = hero.secondary_cta.path | slice: 0, 1 %}
+{% if hero.secondary_cta.path contains "://" %}
+  {% assign secondary_cta_href = hero.secondary_cta.path %}
+{% elsif secondary_cta_first_char == "#" %}
+  {% assign secondary_cta_href = hero.secondary_cta.path %}
+{% else %}
+  {% assign secondary_cta_href = hero.secondary_cta.path | relative_url %}
+{% endif %}
+
+{% assign tertiary_cta_first_char = hero.tertiary_cta.path | slice: 0, 1 %}
+{% if hero.tertiary_cta.path contains "://" %}
+  {% assign tertiary_cta_href = hero.tertiary_cta.path %}
+{% elsif tertiary_cta_first_char == "#" %}
+  {% assign tertiary_cta_href = hero.tertiary_cta.path %}
+{% else %}
+  {% assign tertiary_cta_href = hero.tertiary_cta.path | relative_url %}
+{% endif %}
+
+{% assign featured_panel_image = featured_panel.image_path | prepend: base_path %}
+{% assign integration_panel_image = integration_panel.image_path | prepend: base_path %}
+{% assign gui_overview_image = gui_overview.image_path | prepend: base_path %}
+{% assign downloads_svs_href = downloads.svs.path | relative_url %}
+{% assign downloads_zip_href = downloads.validation_zip.path | relative_url %}
+
+<div class="adifind2-page">
+  <section class="adifind2-hero" aria-labelledby="adifind2-hero-title">
+    <div class="adifind2-hero__content">
+      <p class="adifind2-hero__eyebrow">{{ hero.eyebrow }}</p>
+      <h1 class="adifind2-hero__title" id="adifind2-hero-title">{{ hero.title }}</h1>
+      <p class="adifind2-hero__subtitle">{{ hero.subtitle }}</p>
+
+      <div class="adifind2-hero__actions">
+        <a class="btn btn--success adifind2-hero__button" href="{{ primary_cta_href }}">{{ hero.primary_cta.label }}</a>
+        <a class="btn btn--info adifind2-hero__button" href="{{ secondary_cta_href }}">{{ hero.secondary_cta.label }}</a>
+        <a class="btn btn--inverse adifind2-hero__button" href="{{ tertiary_cta_href }}">{{ hero.tertiary_cta.label }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="adifind2-proof" aria-label="AdiFind scale metrics">
+    {% for item in proof_strip %}
+      <div class="adifind2-proof__item">
+        <p class="adifind2-proof__value">{{ item.value }}</p>
+        <p class="adifind2-proof__label">{{ item.label }}</p>
+      </div>
+    {% endfor %}
+  </section>
+
+  <section class="adifind2-section" aria-labelledby="adifind2-overview-title">
+    <div class="adifind2-overview">
+      <div class="adifind2-overview__intro">
+        <p class="adifind2-section__eyebrow">Overview</p>
+        <h2 class="adifind2-section__title" id="adifind2-overview-title">{{ overview.title }}</h2>
+        <p class="adifind2-section__description">{{ overview.description }}</p>
+      </div>
+
+      <div class="adifind2-panel adifind2-panel--soft">
+        <div class="adifind2-panel__content">
+          <ul class="adifind2-bullet-list">
+            {% for bullet in overview.bullets %}
+              <li>{{ bullet }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="adifind2-section" aria-labelledby="adifind2-outputs-title">
+    <p class="adifind2-section__eyebrow">Outputs</p>
+    <h2 class="adifind2-section__title" id="adifind2-outputs-title">{{ outputs.title }}</h2>
+
+    <div class="adifind2-grid adifind2-grid--cards">
+      {% for item in outputs["items"] %}
+        <article class="adifind2-panel adifind2-panel--output">
+          <div class="adifind2-panel__content">
+            <h3 class="adifind2-panel__title">{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="adifind2-section" aria-label="AdiFind showcase">
+    <div class="adifind2-grid adifind2-grid--feature">
+      <article class="adifind2-panel adifind2-panel--feature">
+        <div class="adifind2-panel__content">
+          <p class="adifind2-panel__eyebrow">Featured</p>
+          <h2 class="adifind2-panel__title">{{ featured_panel.title }}</h2>
+          <p>{{ featured_panel.description }}</p>
+        </div>
+        <figure class="adifind2-panel__media">
+          <button
+            type="button"
+            class="adifind-lightbox-trigger"
+            aria-label="View {{ featured_panel.title | escape }} larger"
+            data-image-src="{{ featured_panel_image }}"
+            data-image-alt="{{ featured_panel.image_alt | escape }}">
+            <img src="{{ featured_panel_image }}" alt="{{ featured_panel.image_alt }}">
+          </button>
+        </figure>
+      </article>
+
+      <article class="adifind2-panel adifind2-panel--integration">
+        <div class="adifind2-panel__content">
+          <p class="adifind2-panel__eyebrow">Integration</p>
+          <h2 class="adifind2-panel__title">{{ integration_panel.title }}</h2>
+          <p>{{ integration_panel.description }}</p>
+          {% if integration_panel.caption %}
+            <p class="adifind2-panel__caption">{{ integration_panel.caption }}</p>
+          {% endif %}
+        </div>
+        <figure class="adifind2-panel__media">
+          <button
+            type="button"
+            class="adifind-lightbox-trigger"
+            aria-label="View {{ integration_panel.title | escape }} larger"
+            data-image-src="{{ integration_panel_image }}"
+            data-image-alt="{{ integration_panel.image_alt | escape }}">
+            <img src="{{ integration_panel_image }}" alt="{{ integration_panel.image_alt }}">
+          </button>
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <section class="adifind2-section" aria-labelledby="adifind2-processing-title">
+    <p class="adifind2-section__eyebrow">Pipeline</p>
+    <h2 class="adifind2-section__title" id="adifind2-processing-title">{{ processing_section.title }}</h2>
+
+    <div class="adifind2-grid adifind2-grid--workflow">
+      {% for panel in processing_section.workflow_panels %}
+        {% assign workflow_panel_image = panel.image_path | prepend: base_path %}
+        <article class="adifind2-panel">
+          <figure class="adifind2-panel__media">
+            <button
+              type="button"
+              class="adifind-lightbox-trigger"
+              aria-label="View {{ panel.title | escape }} larger"
+              data-image-src="{{ workflow_panel_image }}"
+              data-image-alt="{{ panel.image_alt | escape }}">
+              <img src="{{ workflow_panel_image }}" alt="{{ panel.image_alt }}">
+            </button>
+          </figure>
+          <div class="adifind2-panel__content">
+            <h3 class="adifind2-panel__title">{{ panel.title }}</h3>
+            <p>{{ panel.description }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="adifind2-section" aria-labelledby="adifind2-workflows-title">
+    <p class="adifind2-section__eyebrow">Workflow Fit</p>
+    <h2 class="adifind2-section__title" id="adifind2-workflows-title">{{ workflow_fit.title }}</h2>
+
+    <article class="adifind2-panel adifind2-panel--feature">
+      <div class="adifind2-panel__content">
+        <p class="adifind2-panel__eyebrow">Desktop workflow</p>
+        <h3 class="adifind2-panel__title">{{ gui_overview.title }}</h3>
+        <p>{{ gui_overview.description }}</p>
+        {% if gui_overview.caption %}
+          <p class="adifind2-panel__caption">{{ gui_overview.caption }}</p>
+        {% endif %}
+      </div>
+      <figure class="adifind2-panel__media">
+        <button
+          type="button"
+          class="adifind-lightbox-trigger"
+          aria-label="View {{ gui_overview.title | escape }} larger"
+          data-image-src="{{ gui_overview_image }}"
+          data-image-alt="{{ gui_overview.image_alt | escape }}">
+          <img src="{{ gui_overview_image }}" alt="{{ gui_overview.image_alt }}">
+        </button>
+      </figure>
+    </article>
+
+    <div class="adifind2-grid adifind2-grid--pair">
+      {% for entry in roi_demo %}
+        {% assign roi_image = entry.image_path | prepend: base_path %}
+        <article class="adifind2-panel">
+          <figure class="adifind2-panel__media">
+            <button
+              type="button"
+              class="adifind-lightbox-trigger"
+              aria-label="View {{ entry.title | escape }} larger"
+              data-image-src="{{ roi_image }}"
+              data-image-alt="{{ entry.image_alt | escape }}">
+              <img src="{{ roi_image }}" alt="{{ entry.image_alt }}">
+            </button>
+          </figure>
+          <div class="adifind2-panel__content">
+            <h3 class="adifind2-panel__title">{{ entry.title }}</h3>
+            <p>{{ entry.description }}</p>
+            {% if entry.caption %}
+              <p class="adifind2-panel__caption">{{ entry.caption }}</p>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="adifind2-grid adifind2-grid--pair">
+      {% for entry in qupath_demo %}
+        {% assign qupath_image = entry.image_path | prepend: base_path %}
+        <article class="adifind2-panel">
+          <figure class="adifind2-panel__media">
+            <button
+              type="button"
+              class="adifind-lightbox-trigger"
+              aria-label="View {{ entry.title | escape }} larger"
+              data-image-src="{{ qupath_image }}"
+              data-image-alt="{{ entry.image_alt | escape }}">
+              <img src="{{ qupath_image }}" alt="{{ entry.image_alt }}">
+            </button>
+          </figure>
+          <div class="adifind2-panel__content">
+            <h3 class="adifind2-panel__title">{{ entry.title }}</h3>
+            <p>{{ entry.description }}</p>
+            {% if entry.caption %}
+              <p class="adifind2-panel__caption">{{ entry.caption }}</p>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="adifind2-section adifind2-section--validation" aria-labelledby="adifind2-validation-title">
+    <p class="adifind2-section__eyebrow">Validation</p>
+    <h2 class="adifind2-section__title" id="adifind2-validation-title">{{ validation.title }}</h2>
+    <p class="adifind2-section__description">{{ validation.description }}</p>
+
+    <div class="adifind2-proof adifind2-proof--validation" aria-label="Validated at scale metrics">
+      {% for item in validation.metrics %}
+        <div class="adifind2-proof__item">
+          <p class="adifind2-proof__value">{{ item.value }}</p>
+          <p class="adifind2-proof__label">{{ item.label }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="adifind2-section" aria-labelledby="adifind2-downloads-title">
+    <p class="adifind2-section__eyebrow">Downloads</p>
+    <h2 class="adifind2-section__title" id="adifind2-downloads-title">{{ downloads.title }}</h2>
+
+    <div class="adifind2-downloads">
+      <a class="btn btn--info adifind2-downloads__button" href="{{ downloads_svs_href }}">{{ downloads.svs.label }}</a>
+      <a class="btn btn--success adifind2-downloads__button" href="{{ downloads_zip_href }}">{{ downloads.validation_zip.label }}</a>
+    </div>
+  </section>
+
+  <section class="adifind2-contact" id="{{ footer_cta.id }}" aria-labelledby="adifind2-contact-title">
+    <p class="adifind2-section__eyebrow">Contact</p>
+    <h2 class="adifind2-section__title" id="adifind2-contact-title">{{ footer_cta.title }}</h2>
+    <p class="adifind2-section__description">{{ footer_cta.description }}</p>
+    <a class="adifind2-contact__link" href="mailto:{{ contact_email }}">{{ footer_cta.email_display }}</a>
+  </section>
+</div>
+
+<div class="adifind-lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Expanded AdiFind image viewer">
+  <div class="adifind-lightbox__dialog" role="document">
+    <button type="button" class="adifind-lightbox__close" data-adifind-lightbox-close aria-label="Close expanded image">
+      &times;
+    </button>
+    <figure class="adifind-lightbox__figure">
+      <div class="adifind-lightbox__image-wrap">
+        <img class="adifind-lightbox__image" src="" alt="">
+      </div>
+    </figure>
+  </div>
+</div>

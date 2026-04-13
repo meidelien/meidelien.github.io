@@ -1,0 +1,140 @@
+hero:
+  eyebrow: "Research software for digital pathology"
+  title: "Whole-slide adipocyte segmentation and tumor-proximity analysis"
+  subtitle: "Measure adipocyte size, spatial context, and tumor distance from gigapixel histology slides, with QuPath-ready outputs."
+  primary_cta:
+    label: "Download example results"
+    path: "/files/adifind/K106942_AdiFind.zip"
+  secondary_cta:
+    label: "Download example .svs"
+    path: "/files/adifind/K106942.svs"
+  tertiary_cta:
+    label: "Contact / request demo"
+    path: "#contact"
+
+proof_strip:
+  - value: "21,968"
+    label: "Slides processed"
+  - value: ">75 million"
+    label: "Adipocytes measured"
+
+overview:
+  title: "What AdiFind does"
+  description: "AdiFind segments adipocytes in whole-slide histology images, measures their size and spatial relationship to tumor, and exports workflow-ready results for downstream review and analysis."
+  bullets:
+    - "Whole-slide adipocyte instance segmentation"
+    - "Optional tumor-distance analysis"
+    - "ROI-restricted processing"
+    - "QuPath-ready annotation export"
+    - "Annotated overlays and measurement tables"
+
+outputs:
+  title: "What you get"
+  items:
+    - title: "Adipocyte-level measurements"
+      description: "CSV export with adipocyte IDs, areas, centroids, and optional tumor-distance fields."
+    - title: "Slide-level summaries"
+      description: "Structured JSON summary statistics for downstream analysis."
+    - title: "QuPath-ready annotations"
+      description: "GeoJSON export for direct review and integration in QuPath."
+    - title: "Annotated visual outputs"
+      description: "Whole-slide TIFF overlays with adipocyte detections and optional tumor-distance zones."
+
+showcase:
+  featured_panel:
+    title: "Annotated whole-slide output"
+    image_path: "/images/adifind/Asset 29@4x.png"
+    image_alt: "Annotated whole-slide image with tumour and adipose tissue context."
+    description: "AdiFind produces whole-slide overlays and export files that are ready for review, quantification, and downstream integration."
+
+  integration_panel:
+    title: "QuPath integration"
+    image_path: "/images/adifind/adifind_stardist_example.png"
+    image_alt: "QuPath view showing AdiFind adipocyte masks in light green together with StarDist nuclei detections in red."
+    description: "AdiFind outputs can be used directly alongside existing QuPath workflows, including nuclear segmentation and spatial annotation pipelines."
+    caption: "AdiFind + QuPath = 🤝"
+
+processing_section:
+  title: "How it works"
+  workflow_panels:
+    - title: "Whole-slide context"
+      image_path: "/images/adifind/Asset 1@4x.png"
+      image_alt: "Whole-slide image pyramid illustrating multi-resolution access from downscaled to full-resolution tissue."
+      description: "AdiFind moves between slide-level context and full-resolution analysis using a multi-resolution whole-slide pyramid."
+
+    - title: "Guided tissue overview"
+      image_path: "/images/adifind/Asset 14@4x.png"
+      image_alt: "Downscaled 1X overview used for tumour detection and tissue guidance."
+      description: "A downscaled overview is used for tissue guidance and optional tumor analysis before high-resolution inference."
+
+    - title: "Full-resolution detection"
+      image_path: "/images/adifind/Asset 13@4x.png"
+      image_alt: "Full-resolution preprocessing showing raw, inverted, Sobel-enhanced, and adipocyte-detection stages."
+      description: "Full-resolution tissue windows are preprocessed to enhance adipocyte boundaries before instance detection."
+
+    - title: "Tiled inference and reconciliation"
+      image_path: "/images/adifind/Asset 3@4x.png"
+      image_alt: "Sliding-window inference with overlapping windows and reconciled adipocyte detections."
+      description: "AdiFind runs overlapping tiled inference across tissue regions and reconciles duplicate detections across tile boundaries."
+
+workflow_fit:
+  title: "Fits into existing pathology workflows"
+  gui_overview:
+    title: "User interface"
+    description: "Configure analysis settings and run the AdiFind workflow from a user-friendly desktop interface."
+    image_path: "/images/adifind/paper_adifind_GUI.png"
+    image_alt: "Screenshot of the AdiFind graphical user interface."
+    caption: "Desktop interface for configuring and running analysis."
+
+  roi_demo:
+    - title: "Restrict analysis to a chosen region"
+      description: "Draw a freehand or polygonal ROI to limit analysis to the tissue region you want to measure."
+      image_path: "/images/adifind/paper_ROI_frehand.png"
+      image_alt: "Freehand ROI selection before annotations are applied."
+      caption: "ROI-restricted analysis."
+
+    - title: "Review ROI-specific results"
+      description: "Inspect adipocyte annotations generated within the selected region of interest."
+      image_path: "/images/adifind/paper_ROI_frehand_annotated.png"
+      image_alt: "Annotated ROI view showing the generated analysis output."
+      caption: "Annotated output within the selected ROI."
+
+  qupath_demo:
+    - title: "Import into QuPath"
+      description: "Review exported AdiFind annotations directly in QuPath."
+      image_path: "/images/adifind/AdiFind_QuPath_demo.png"
+      image_alt: "QuPath overview displaying imported AdiFind annotations on the example slide."
+      caption: "AdiFind + QuPath = 🤝"
+
+    - title: "Inspect measurements in context"
+      description: "Zoom to individual adipocytes and inspect stored measurements alongside existing QuPath annotations."
+      image_path: "/images/adifind/AdiFind_QuPath_demo_zoomed_in.png"
+      image_alt: "Zoomed QuPath view showing individual AdiFind adipocyte annotations."
+      caption: "Keep adipocyte sizing inside your QuPath workflow."
+
+validation:
+  title: "Validated at scale"
+  description: "AdiFind has been applied across TCGA, ABCTB, and Susan G. Komen whole-slide cohorts to quantify tumor-proximal adipocyte morphology at scale."
+  metrics:
+    - value: "21,968"
+      label: "Slides processed"
+    - value: ">75 million"
+      label: "Adipocytes measured"
+
+downloads:
+  title: "Try the example data"
+  svs:
+    label: "Download example whole-slide image (.svs)"
+    path: "/files/adifind/K106942.svs"
+  validation_zip:
+    label: "Download example AdiFind outputs (.zip)"
+    path: "/files/adifind/K106942_AdiFind.zip"
+
+footer_cta:
+  id: "contact"
+  title: "Interested in using AdiFind?"
+  description: "Contact Martin Eide Lien for collaboration or demo requests."
+  email_display: "martin [dot] lien [at] uib [dot] no"
+  email_parts:
+    user: "martin.lien"
+    domain: "uib.no"
