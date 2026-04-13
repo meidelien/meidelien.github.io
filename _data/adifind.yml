@@ -11,22 +11,22 @@ processing_section:
     - title: "Whole-slide image pyramid"
       image_path: "/images/adifind/Asset 1@4x.png"
       image_alt: "Whole-slide image pyramid illustrating multi-resolution access from downscaled to full-resolution tissue."
-      description: "Move between whole-slide context and full-resolution adipocyte analysis using a multi-resolution image pyramid."
+      description: "AdiFind moves between whole-slide context and full-resolution adipocyte analysis using a multi-resolution image pyramid."
 
     - title: "Downscaled 1X overview"
       image_path: "/images/adifind/Asset 14@4x.png"
       image_alt: "Downscaled 1X overview used for tumour detection and tissue guidance."
-      description: "Use a downscaled 1X overview for tumour detection and tissue guidance before high-resolution analysis."
+      description: "AdiFind uses a downscaled 1X overview for tumour detection and tissue guidance before high-resolution analysis."
 
     - title: "Full-resolution preprocessing"
       image_path: "/images/adifind/Asset 13@4x.png"
       image_alt: "Full-resolution preprocessing showing raw, inverted, Sobel-enhanced, and adipocyte-detection stages."
-      description: "Preprocess full-resolution tissue windows to enhance adipocyte boundaries before detection."
+      description: "AdiFind preprocesses full-resolution tissue windows to enhance adipocyte boundaries before detection."
 
     - title: "Sliding-window inference"
       image_path: "/images/adifind/Asset 3@4x.png"
       image_alt: "Sliding-window inference with overlapping windows and reconciled adipocyte detections."
-      description: "Run sliding-window inference across guided tissue regions and reconcile overlapping detections."
+      description: "AdiFind performs sliding-window inference across guided tissue regions and reconcile overlapping detections."
 
   annotated_panel:
     title: "Annotated whole-slide output"
@@ -54,7 +54,7 @@ details:
       image_path: "/images/adifind/paper_ROI_frehand_annotated.png"
       image_alt: "Annotated ROI view showing the generated analysis output."
       caption: "Annotated AdiFind output for the selected ROI."
-  
+
   qupath_workflow_example:
     title: "AdiFind integrates easily with existing QuPath based analyses & workflows"
     description: "Light green masks show AdiFind adipocyte results, while red dots show StarDist nuclei segmentation, demonstrating how AdiFind outputs can be used directly alongside existing QuPath workflows."
