@@ -43,13 +43,13 @@ details:
     caption: "Desktop interface for configuring and running analysis."
 
   roi_demo:
-    - title: "ROI selection"
+    - title: "Region of interest selection"
       description: "Define a freehand region of interest to restrict analysis to a selected tissue area."
       image_path: "/images/adifind/paper_ROI_frehand.png"
       image_alt: "Freehand ROI selection before annotations are applied."
-      caption: "Freehand ROI selection in the AdiFind viewer."
+      caption: "Only want to analyze a specific tissue region?🤔"
 
-    - title: "ROI annotated output"
+    - title: "Region of interest annotated output"
       description: "Review the generated adipocyte annotations within the same selected ROI."
       image_path: "/images/adifind/paper_ROI_frehand_annotated.png"
       image_alt: "Annotated ROI view showing the generated analysis output."
@@ -66,4 +66,4 @@ details:
       description: "Examine individual or groups adipocytes and adipocyte labels at higher magnification in QuPath."
       image_path: "/images/adifind/AdiFind_QuPath_demo_zoomed_in.png"
       image_alt: "Zoomed QuPath view showing individual AdiFind adipocyte annotations."
-      caption: "Higher-magnification review in QuPath."
+      caption: "Let AdiFind save your team hours of tedious work."
