@@ -81,6 +81,91 @@ if (plotlyElements.length > 0) {
   });
 }
 
+let initAdiFindLightbox = () => {
+  const lightbox = document.querySelector(".adifind-lightbox");
+  if (!lightbox) {
+    return;
+  }
+
+  const lightboxImage = lightbox.querySelector(".adifind-lightbox__image");
+  const lightboxTitle = lightbox.querySelector(".adifind-lightbox__title");
+  const lightboxCaption = lightbox.querySelector(".adifind-lightbox__caption");
+  const closeButton = lightbox.querySelector("[data-adifind-lightbox-close]");
+  let activeTrigger = null;
+
+  const closeLightbox = () => {
+    lightbox.classList.remove("is-active");
+    lightbox.hidden = true;
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("adifind-lightbox-open");
+    lightboxImage.removeAttribute("src");
+    lightboxImage.setAttribute("alt", "");
+    if (activeTrigger && typeof activeTrigger.focus === "function") {
+      activeTrigger.focus();
+    }
+    activeTrigger = null;
+  };
+
+  const openLightbox = (trigger) => {
+    const title = (trigger.dataset.imageTitle || "").trim();
+    const caption = (trigger.dataset.imageCaption || trigger.dataset.imageDescription || "").trim();
+    const alt = (trigger.dataset.imageAlt || "").trim();
+
+    activeTrigger = trigger;
+    lightboxImage.src = trigger.dataset.imageSrc || "";
+    lightboxImage.alt = alt;
+
+    if (title) {
+      lightboxTitle.textContent = title;
+      lightboxTitle.hidden = false;
+    } else {
+      lightboxTitle.textContent = "";
+      lightboxTitle.hidden = true;
+    }
+
+    const supportingText = caption || (!title ? alt : "");
+    if (supportingText) {
+      lightboxCaption.textContent = supportingText;
+      lightboxCaption.hidden = false;
+    } else {
+      lightboxCaption.textContent = "";
+      lightboxCaption.hidden = true;
+    }
+
+    lightbox.hidden = false;
+    lightbox.classList.add("is-active");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("adifind-lightbox-open");
+    if (closeButton && typeof closeButton.focus === "function") {
+      closeButton.focus();
+    }
+  };
+
+  document.addEventListener("click", (event) => {
+    const trigger = event.target.closest(".adifind-lightbox-trigger");
+    if (trigger) {
+      event.preventDefault();
+      openLightbox(trigger);
+      return;
+    }
+
+    if (!lightbox.classList.contains("is-active")) {
+      return;
+    }
+
+    if (event.target === lightbox || event.target.closest("[data-adifind-lightbox-close]")) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && lightbox.classList.contains("is-active")) {
+      event.preventDefault();
+      closeLightbox();
+    }
+  });
+};
+
 /* ==========================================================================
    Actions that should occur when the page has been fully loaded
    ========================================================================== */
@@ -138,5 +223,7 @@ $(document).ready(function () {
     offset: -scssMastheadHeight,
     preventDefault: false,
   });
+
+  initAdiFindLightbox();
 
 });

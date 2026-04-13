@@ -19,6 +19,16 @@
     {% endif %}
   </div>
   <figure class="adifind-card__media">
-    <img src="{{ entry_image }}" alt="{{ entry.image_alt }}">
+    <button
+      type="button"
+      class="adifind-lightbox-trigger"
+      aria-label="View {{ entry.title | default: entry.image_alt | escape }} larger"
+      data-image-src="{{ entry_image }}"
+      data-image-alt="{{ entry.image_alt | escape }}"
+      data-image-title="{{ entry.title | escape }}"
+      data-image-caption="{{ entry.caption | default: '' | escape }}"
+      data-image-description="{{ entry.description | default: '' | escape }}">
+      <img src="{{ entry_image }}" alt="{{ entry.image_alt }}">
+    </button>
   </figure>
 </article>

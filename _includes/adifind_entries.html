@@ -28,7 +28,16 @@
             {% endif %}
           </div>
           <figure class="adifind-process__media">
-            <img src="{{ panel_image }}" alt="{{ panel.image_alt }}">
+            <button
+              type="button"
+              class="adifind-lightbox-trigger"
+              aria-label="View {{ panel.title | default: panel.image_alt | escape }} larger"
+              data-image-src="{{ panel_image }}"
+              data-image-alt="{{ panel.image_alt | escape }}"
+              data-image-title="{{ panel.title | escape }}"
+              data-image-caption="{{ panel.description | default: '' | escape }}">
+              <img src="{{ panel_image }}" alt="{{ panel.image_alt }}">
+            </button>
           </figure>
         </article>
       {% endfor %}
@@ -52,7 +61,16 @@
             {% endif %}
           </div>
           <figure class="adifind-process__media">
-            <img src="{{ annotated_panel_image }}" alt="{{ annotated_panel.image_alt }}">
+            <button
+              type="button"
+              class="adifind-lightbox-trigger"
+              aria-label="View {{ annotated_panel.title | default: annotated_panel.image_alt | escape }} larger"
+              data-image-src="{{ annotated_panel_image }}"
+              data-image-alt="{{ annotated_panel.image_alt | escape }}"
+              data-image-title="{{ annotated_panel.title | escape }}"
+              data-image-caption="{{ annotated_panel.description | default: '' | escape }}">
+              <img src="{{ annotated_panel_image }}" alt="{{ annotated_panel.image_alt }}">
+            </button>
           </figure>
         </article>
       </div>
@@ -62,13 +80,13 @@
 
 {% if gui_overview %}
   <section class="adifind-section" aria-label="AdiFind workflow details">
-    <h2 class="adifind-section__title">Workflow and validation views</h2>
+    <h2 class="adifind-section__title">Features</h2>
     <div class="adifind-grid adifind-grid--lead">
       {% include adifind_card.html entry=gui_overview %}
     </div>
 
     {% if roi_demo and roi_demo.size > 0 %}
-      <h3 class="adifind-subsection__title">ROI demonstration</h3>
+      <h3 class="adifind-subsection__title">Region of interest support</h3>
       <div class="adifind-grid adifind-grid--pair">
         {% for entry in roi_demo %}
           {% include adifind_card.html entry=entry %}
@@ -101,3 +119,20 @@
     </div>
   </section>
 {% endif %}
+
+<div class="adifind-lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Expanded AdiFind image viewer">
+  <div class="adifind-lightbox__dialog" role="document">
+    <button type="button" class="adifind-lightbox__close" data-adifind-lightbox-close aria-label="Close expanded image">
+      &times;
+    </button>
+    <figure class="adifind-lightbox__figure">
+      <div class="adifind-lightbox__image-wrap">
+        <img class="adifind-lightbox__image" src="" alt="">
+      </div>
+      <figcaption class="adifind-lightbox__meta">
+        <p class="adifind-lightbox__title" hidden></p>
+        <p class="adifind-lightbox__caption" hidden></p>
+      </figcaption>
+    </figure>
+  </div>
+</div>
