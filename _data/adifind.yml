@@ -56,7 +56,7 @@ details:
       caption: "Annotated output for the selected ROI."
 
   qupath_workflow_example:
-    title: "Tired of exporting ROIs to ImageJ/AdipoSoft?"
+    title: "Tired of exporting ROIs to ImageJ/AdipoSoft and then back to QuPath to get your adipocyte sizes?"
     description: "Light green masks show AdiFind adipocyte results, while red dots show StarDist nuclei segmentation, demonstrating how AdiFind outputs can be used directly alongside existing QuPath workflows."
     image_path: "/images/adifind/adifind_stardist_example.png"
     image_alt: "QuPath view showing AdiFind adipocyte masks in light green together with StarDist nuclei detections in red."
