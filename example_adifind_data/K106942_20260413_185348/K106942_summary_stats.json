@@ -1,0 +1,11 @@
+{
+  "image_name": "K106942",
+  "total_adipocytes": 3183,
+  "mean_area_um2": 2344.586086592761,
+  "median_area_um2": 2266.4881791999996,
+  "std_area_um2": 1110.9531467540455,
+  "min_area_um2": 252.53758375999996,
+  "max_area_um2": 7683.834548039999,
+  "total_area_um2": 7462817.513624759,
+  "extended_properties_enabled": false
+}
