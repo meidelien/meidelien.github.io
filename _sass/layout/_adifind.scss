@@ -74,13 +74,15 @@
 }
 
 .adifind-process--workflow {
+  margin-top: 1.5rem;
+
   @include breakpoint($medium) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 .adifind-process--annotated {
-  margin-top: 1.5rem;
+  margin-top: 0;
 }
 
 .adifind-process__item,

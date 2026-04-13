@@ -10,37 +10,6 @@
 {% if workflow_panels and workflow_panels.size > 0 %}
   <section class="adifind-section" aria-label="AdiFind processing flow">
     <h2 class="adifind-section__title">Processing flow</h2>
-    <div class="adifind-process adifind-process--workflow">
-      {% for panel in workflow_panels %}
-        {% include base_path %}
-
-        {% if panel.image_path contains "://" %}
-          {% assign panel_image = panel.image_path %}
-        {% else %}
-          {% assign panel_image = panel.image_path | prepend: base_path %}
-        {% endif %}
-
-        <article class="adifind-process__item">
-          <div class="adifind-process__body">
-            <h3 class="adifind-process__title">{{ panel.title }}</h3>
-            {% if panel.description %}
-              <p class="adifind-process__caption">{{ panel.description }}</p>
-            {% endif %}
-          </div>
-          <figure class="adifind-process__media">
-            <button
-              type="button"
-              class="adifind-lightbox-trigger"
-              aria-label="View {{ panel.title | default: panel.image_alt | escape }} larger"
-              data-image-src="{{ panel_image }}"
-              data-image-alt="{{ panel.image_alt | escape }}">
-              <img src="{{ panel_image }}" alt="{{ panel.image_alt }}">
-            </button>
-          </figure>
-        </article>
-      {% endfor %}
-    </div>
-
     {% if annotated_panel %}
       {% include base_path %}
 
@@ -71,6 +40,37 @@
         </article>
       </div>
     {% endif %}
+
+    <div class="adifind-process adifind-process--workflow">
+      {% for panel in workflow_panels %}
+        {% include base_path %}
+
+        {% if panel.image_path contains "://" %}
+          {% assign panel_image = panel.image_path %}
+        {% else %}
+          {% assign panel_image = panel.image_path | prepend: base_path %}
+        {% endif %}
+
+        <article class="adifind-process__item">
+          <div class="adifind-process__body">
+            <h3 class="adifind-process__title">{{ panel.title }}</h3>
+            {% if panel.description %}
+              <p class="adifind-process__caption">{{ panel.description }}</p>
+            {% endif %}
+          </div>
+          <figure class="adifind-process__media">
+            <button
+              type="button"
+              class="adifind-lightbox-trigger"
+              aria-label="View {{ panel.title | default: panel.image_alt | escape }} larger"
+              data-image-src="{{ panel_image }}"
+              data-image-alt="{{ panel.image_alt | escape }}">
+              <img src="{{ panel_image }}" alt="{{ panel.image_alt }}">
+            </button>
+          </figure>
+        </article>
+      {% endfor %}
+    </div>
   </section>
 {% endif %}
 
