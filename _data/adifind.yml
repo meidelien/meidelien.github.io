@@ -32,7 +32,7 @@ processing_section:
     title: "Annotated whole-slide output"
     image_path: "/images/adifind/Asset 29@4x.png"
     image_alt: "Annotated whole-slide image with tumour and adipose tissue context."
-    description: "This annotated whole-slide image is the primary visual output of AdiFind, providing tumour and adipose tissue context for review and downstream validation."
+    description: "A annotated whole-slide image is the primary visual output of AdiFind, providing tumour and adipose tissue context for review and downstream validation."
 
 details:
   gui_overview:
