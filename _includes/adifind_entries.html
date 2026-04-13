@@ -43,8 +43,8 @@
       {% endif %}
 
       <div class="adifind-process adifind-process--annotated">
-        <article class="adifind-process__item adifind-process__item--wide">
-          <div class="adifind-process__body">
+        <article class="adifind-process__item adifind-process__item--wide adifind-process__item--annotated">
+          <div class="adifind-process__body adifind-process__body--annotated">
             <h3 class="adifind-process__title">{{ annotated_panel.title }}</h3>
             {% if annotated_panel.description %}
               <p class="adifind-process__caption">{{ annotated_panel.description }}</p>
@@ -85,10 +85,10 @@
     {% endif %}
 
     <div class="adifind-page__actions">
-      <a class="btn btn--info" href="{{ site.data.adifind.downloads.svs.path | relative_url }}">
+      <a class="btn btn--info adifind-page__action" href="{{ site.data.adifind.downloads.svs.path | relative_url }}">
         {{ site.data.adifind.downloads.svs.label }}
       </a>
-      <a class="btn btn--success" href="{{ site.data.adifind.downloads.validation_zip.path | relative_url }}">
+      <a class="btn btn--success adifind-page__action" href="{{ site.data.adifind.downloads.validation_zip.path | relative_url }}">
         {{ site.data.adifind.downloads.validation_zip.label }}
       </a>
     </div>
