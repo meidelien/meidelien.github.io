@@ -20,13 +20,4 @@ hide_title: true
   with additional GUI, ROI, and QuPath views for validation.
 </div>
 
-<div class="adifind-page__actions">
-  <a class="btn btn--info" href="{{ site.data.adifind.downloads.svs.path | relative_url }}">
-    {{ site.data.adifind.downloads.svs.label }}
-  </a>
-  <a class="btn btn--success" href="{{ site.data.adifind.downloads.validation_zip.path | relative_url }}">
-    {{ site.data.adifind.downloads.validation_zip.label }}
-  </a>
-</div>
-
 {% include adifind_entries.html %}
