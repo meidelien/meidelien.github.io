@@ -1,6 +1,6 @@
 ---
 title: "AdiFind"
-excerpt: "AdiFind workflow overview with processing steps, QuPath validation views, and example downloads."
+excerpt: ""
 collection: portfolio
 permalink: /adifind/
 redirect_from:
