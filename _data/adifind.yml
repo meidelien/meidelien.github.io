@@ -56,14 +56,14 @@ details:
       caption: "Annotated output for the selected ROI."
 
   qupath_demo:
-    - title: "QuPath overview"
+    - title: "Import results to QuPath "
       description: "Inspect exported AdiFind annotations across the processed tissue region in QuPath."
       image_path: "/images/adifind/AdiFind_QuPath_demo.png"
       image_alt: "QuPath overview displaying imported AdiFind annotations on the example slide."
-      caption: "Whole-slide review in QuPath."
+      caption: "AdiFind + QuPath = 🤝"
 
     - title: "QuPath close-up"
-      description: "Examine individual adipocyte boundaries and labels at higher magnification in QuPath."
+      description: "Examine individual or groups adipocytes and adipocyte labels at higher magnification in QuPath."
       image_path: "/images/adifind/AdiFind_QuPath_demo_zoomed_in.png"
       image_alt: "Zoomed QuPath view showing individual AdiFind adipocyte annotations."
       caption: "Higher-magnification review in QuPath."
