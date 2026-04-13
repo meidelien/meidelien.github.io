@@ -1,36 +1,66 @@
-{% assign process_flow = site.data.adifind.process_flow %}
+{% assign processing_section = site.data.adifind.processing_section %}
+{% assign workflow_panels = processing_section.workflow_panels %}
+{% assign outcome_panels = processing_section.outcome_panels %}
 {% assign details = site.data.adifind.details %}
 {% assign gui_overview = details.gui_overview %}
 {% assign roi_demo = details.roi_demo %}
 {% assign qupath_demo = details.qupath_demo %}
 
-{% if process_flow and process_flow.size > 0 %}
+{% if workflow_panels and workflow_panels.size > 0 %}
   <section class="adifind-section" aria-label="AdiFind processing flow">
     <h2 class="adifind-section__title">Processing flow</h2>
-    <div class="adifind-process">
-      {% for step in process_flow %}
+    <div class="adifind-process adifind-process--workflow">
+      {% for panel in workflow_panels %}
         {% include base_path %}
 
-        {% if step.image_path contains "://" %}
-          {% assign step_image = step.image_path %}
+        {% if panel.image_path contains "://" %}
+          {% assign panel_image = panel.image_path %}
         {% else %}
-          {% assign step_image = step.image_path | prepend: base_path %}
+          {% assign panel_image = panel.image_path | prepend: base_path %}
         {% endif %}
 
         <article class="adifind-process__item">
           <div class="adifind-process__body">
-            <p class="adifind-process__step">Step {{ forloop.index }}</p>
-            <h3 class="adifind-process__title">{{ step.title }}</h3>
-            {% if step.caption %}
-              <p class="adifind-process__caption">{{ step.caption }}</p>
+            {% if panel.panel_label %}
+              <p class="adifind-process__step">{{ panel.panel_label }}</p>
+            {% endif %}
+            <h3 class="adifind-process__title">{{ panel.title }}</h3>
+            {% if panel.description %}
+              <p class="adifind-process__caption">{{ panel.description }}</p>
             {% endif %}
           </div>
           <figure class="adifind-process__media">
-            <img src="{{ step_image }}" alt="{{ step.image_alt }}">
+            <img src="{{ panel_image }}" alt="{{ panel.image_alt }}">
           </figure>
         </article>
       {% endfor %}
     </div>
+
+    {% if outcome_panels and outcome_panels.size > 0 %}
+      <div class="adifind-process adifind-process--outcomes">
+        {% for panel in outcome_panels %}
+          {% include base_path %}
+
+          {% if panel.image_path contains "://" %}
+            {% assign panel_image = panel.image_path %}
+          {% else %}
+            {% assign panel_image = panel.image_path | prepend: base_path %}
+          {% endif %}
+
+          <article class="adifind-process__item">
+            <div class="adifind-process__body">
+              <h3 class="adifind-process__title">{{ panel.title }}</h3>
+              {% if panel.description %}
+                <p class="adifind-process__caption">{{ panel.description }}</p>
+              {% endif %}
+            </div>
+            <figure class="adifind-process__media">
+              <img src="{{ panel_image }}" alt="{{ panel.image_alt }}">
+            </figure>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
   </section>
 {% endif %}
 

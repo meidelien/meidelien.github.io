@@ -15,9 +15,9 @@ hide_title: true
     src="{{ '/images/adifind_logo_cropped.png' | relative_url }}"
     alt="AdiFind logo">
 
-  A digital pathology software for inspecting adipocyte-related regions in whole-slide images.
-  The figures below show how the example slide moves from tissue detection to windowed processing and final annotated output,
-  with additional GUI, ROI, and QuPath views for validation.
+  AdiFind is research software for tumour-adjacent adipose analysis on whole-slide histology images.
+  The figures below summarise the workflow from whole-slide overview and tissue guidance through full-resolution adipocyte detection,
+  sliding-window inference, tumour-distance mapping, and downstream validation in GUI and QuPath views.
 </div>
 
 {% include adifind_entries.html %}
