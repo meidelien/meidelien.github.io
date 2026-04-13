@@ -14,7 +14,6 @@
 {% assign roi_demo = workflow_fit.roi_demo %}
 {% assign qupath_demo = workflow_fit.qupath_demo %}
 {% assign validation = adifind.validation %}
-{% assign downloads = adifind.downloads %}
 {% assign footer_cta = adifind.footer_cta %}
 {% assign contact_email = footer_cta.email_parts.user | append: '@' | append: footer_cta.email_parts.domain %}
 
@@ -48,8 +47,6 @@
 {% assign featured_panel_image = featured_panel.image_path | prepend: base_path %}
 {% assign integration_panel_image = integration_panel.image_path | prepend: base_path %}
 {% assign gui_overview_image = gui_overview.image_path | prepend: base_path %}
-{% assign downloads_svs_href = downloads.svs.path | relative_url %}
-{% assign downloads_zip_href = downloads.validation_zip.path | relative_url %}
 
 <div class="adifind2-page">
   <section class="adifind2-hero" aria-labelledby="adifind2-hero-title">
@@ -261,25 +258,6 @@
     <p class="adifind2-section__eyebrow">Validation</p>
     <h2 class="adifind2-section__title" id="adifind2-validation-title">{{ validation.title }}</h2>
     <p class="adifind2-section__description">{{ validation.description }}</p>
-
-    <div class="adifind2-proof adifind2-proof--validation" aria-label="Validated at scale metrics">
-      {% for item in validation.metrics %}
-        <div class="adifind2-proof__item">
-          <p class="adifind2-proof__value">{{ item.value }}</p>
-          <p class="adifind2-proof__label">{{ item.label }}</p>
-        </div>
-      {% endfor %}
-    </div>
-  </section>
-
-  <section class="adifind2-section" aria-labelledby="adifind2-downloads-title">
-    <p class="adifind2-section__eyebrow">Downloads</p>
-    <h2 class="adifind2-section__title" id="adifind2-downloads-title">{{ downloads.title }}</h2>
-
-    <div class="adifind2-downloads">
-      <a class="btn btn--info adifind2-downloads__button" href="{{ downloads_svs_href }}">{{ downloads.svs.label }}</a>
-      <a class="btn btn--success adifind2-downloads__button" href="{{ downloads_zip_href }}">{{ downloads.validation_zip.label }}</a>
-    </div>
   </section>
 
   <section class="adifind2-contact" id="{{ footer_cta.id }}" aria-labelledby="adifind2-contact-title">
