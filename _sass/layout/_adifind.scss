@@ -261,24 +261,6 @@ html[data-theme="dark"] .adifind-lightbox {
   height: auto;
 }
 
-.adifind-lightbox__meta {
-  padding: 1rem 1.25rem 1.25rem;
-  color: var(--global-text-color);
-}
-
-.adifind-lightbox__title,
-.adifind-lightbox__caption {
-  margin: 0;
-}
-
-.adifind-lightbox__title {
-  font-weight: 700;
-
-  &:not([hidden]) + .adifind-lightbox__caption:not([hidden]) {
-    margin-top: 0.35rem;
-  }
-}
-
 .adifind-card__body {
   display: flex;
   flex: 1 1 auto;

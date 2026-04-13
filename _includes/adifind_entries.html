@@ -33,9 +33,7 @@
               class="adifind-lightbox-trigger"
               aria-label="View {{ panel.title | default: panel.image_alt | escape }} larger"
               data-image-src="{{ panel_image }}"
-              data-image-alt="{{ panel.image_alt | escape }}"
-              data-image-title="{{ panel.title | escape }}"
-              data-image-caption="{{ panel.description | default: '' | escape }}">
+              data-image-alt="{{ panel.image_alt | escape }}">
               <img src="{{ panel_image }}" alt="{{ panel.image_alt }}">
             </button>
           </figure>
@@ -66,9 +64,7 @@
               class="adifind-lightbox-trigger"
               aria-label="View {{ annotated_panel.title | default: annotated_panel.image_alt | escape }} larger"
               data-image-src="{{ annotated_panel_image }}"
-              data-image-alt="{{ annotated_panel.image_alt | escape }}"
-              data-image-title="{{ annotated_panel.title | escape }}"
-              data-image-caption="{{ annotated_panel.description | default: '' | escape }}">
+              data-image-alt="{{ annotated_panel.image_alt | escape }}">
               <img src="{{ annotated_panel_image }}" alt="{{ annotated_panel.image_alt }}">
             </button>
           </figure>
@@ -129,10 +125,6 @@
       <div class="adifind-lightbox__image-wrap">
         <img class="adifind-lightbox__image" src="" alt="">
       </div>
-      <figcaption class="adifind-lightbox__meta">
-        <p class="adifind-lightbox__title" hidden></p>
-        <p class="adifind-lightbox__caption" hidden></p>
-      </figcaption>
     </figure>
   </div>
 </div>
