@@ -5,6 +5,7 @@
 {% assign gui_overview = details.gui_overview %}
 {% assign roi_demo = details.roi_demo %}
 {% assign qupath_demo = details.qupath_demo %}
+{% assign qupath_workflow_example = details.qupath_workflow_example %}
 
 {% if workflow_panels and workflow_panels.size > 0 %}
   <section class="adifind-section" aria-label="AdiFind processing flow">
@@ -81,6 +82,12 @@
         {% for entry in qupath_demo %}
           {% include adifind_card.html entry=entry %}
         {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if qupath_workflow_example %}
+      <div class="adifind-grid adifind-grid--wide">
+        {% include adifind_card.html entry=qupath_workflow_example %}
       </div>
     {% endif %}
 
