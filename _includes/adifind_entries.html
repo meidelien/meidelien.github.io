@@ -1,6 +1,8 @@
 {% assign process_flow = site.data.adifind.process_flow %}
 {% assign details = site.data.adifind.details %}
-{% assign lead_detail = details | first %}
+{% assign gui_overview = details.gui_overview %}
+{% assign roi_demo = details.roi_demo %}
+{% assign qupath_demo = details.qupath_demo %}
 
 {% if process_flow and process_flow.size > 0 %}
   <section class="adifind-section" aria-label="AdiFind processing flow">
@@ -16,30 +18,42 @@
         {% endif %}
 
         <article class="adifind-process__item">
-          <figure class="adifind-process__media">
-            <img src="{{ step_image }}" alt="{{ step.image_alt }}">
-          </figure>
           <div class="adifind-process__body">
             <p class="adifind-process__step">Step {{ forloop.index }}</p>
             <h3 class="adifind-process__title">{{ step.title }}</h3>
-            <p>{{ step.caption }}</p>
+            {% if step.caption %}
+              <p class="adifind-process__caption">{{ step.caption }}</p>
+            {% endif %}
           </div>
+          <figure class="adifind-process__media">
+            <img src="{{ step_image }}" alt="{{ step.image_alt }}">
+          </figure>
         </article>
       {% endfor %}
     </div>
   </section>
 {% endif %}
 
-{% if lead_detail %}
+{% if gui_overview %}
   <section class="adifind-section" aria-label="AdiFind workflow details">
     <h2 class="adifind-section__title">Workflow and validation views</h2>
     <div class="adifind-grid adifind-grid--lead">
-      {% include adifind_card.html entry=lead_detail %}
+      {% include adifind_card.html entry=gui_overview %}
     </div>
 
-    {% if details.size > 1 %}
-      <div class="adifind-grid adifind-grid--qupath">
-        {% for entry in details offset:1 %}
+    {% if roi_demo and roi_demo.size > 0 %}
+      <h3 class="adifind-subsection__title">ROI demonstration</h3>
+      <div class="adifind-grid adifind-grid--pair">
+        {% for entry in roi_demo %}
+          {% include adifind_card.html entry=entry %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if qupath_demo and qupath_demo.size > 0 %}
+      <h3 class="adifind-subsection__title">QuPath validation views</h3>
+      <div class="adifind-grid adifind-grid--pair">
+        {% for entry in qupath_demo %}
           {% include adifind_card.html entry=entry %}
         {% endfor %}
       </div>

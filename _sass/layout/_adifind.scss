@@ -29,6 +29,11 @@
   margin-bottom: 1rem;
 }
 
+.adifind-subsection__title {
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+}
+
 .adifind-process {
   display: grid;
   grid-template-columns: 1fr;
@@ -77,6 +82,13 @@
   color: var(--global-text-color-light);
 }
 
+.adifind-process__caption,
+.adifind-card__caption {
+  margin-bottom: 0.5rem;
+  font-size: $type-size-7;
+  color: var(--global-text-color-light);
+}
+
 .adifind-process__title,
 .adifind-card__title {
   margin-top: 0;
@@ -95,19 +107,11 @@
   max-width: 36rem;
 }
 
-.adifind-grid--qupath {
+.adifind-grid--pair {
   margin-top: 1.5rem;
 
   @include breakpoint($medium) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.adifind-card__media {
-  figcaption {
-    padding: 0.75rem 1rem 0;
-    font-size: $type-size-7;
-    color: var(--global-text-color-light);
   }
 }
 

@@ -9,17 +9,16 @@
 {% endif %}
 
 <article class="adifind-card">
-  <figure class="adifind-card__media">
-    <img src="{{ entry_image }}" alt="{{ entry.image_alt }}">
-    {% if entry.caption %}
-      <figcaption>{{ entry.caption }}</figcaption>
-    {% endif %}
-  </figure>
-
   <div class="adifind-card__body">
+    {% if entry.caption %}
+      <p class="adifind-card__caption">{{ entry.caption }}</p>
+    {% endif %}
     <h3 class="adifind-card__title">{{ entry.title }}</h3>
     {% if entry.description %}
       <p>{{ entry.description }}</p>
     {% endif %}
   </div>
+  <figure class="adifind-card__media">
+    <img src="{{ entry_image }}" alt="{{ entry.image_alt }}">
+  </figure>
 </article>
