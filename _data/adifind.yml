@@ -32,12 +32,12 @@ processing_section:
     title: "Annotated whole-slide output"
     image_path: "/images/adifind/Asset 29@4x.png"
     image_alt: "Annotated whole-slide image with tumour and adipose tissue context."
-    description: "AdiFind produces annotated whole-slide TIFF/PNG overlays with optional adipocyte IDs, tissue-detection and tissue-mask previews, window-grid visualizations, QuPath-ready GeoJSON annotations, adipocyte-level CSV measurements, and summary statistics for downstream review and integration."
+    description: "AdiFind produces annotated whole-slide TIFF overlays with optional adipocyte IDs, tissue-detection and tissue-mask previews, QuPath-ready GeoJSON annotations, adipocyte-level CSV measurements, and summary statistics for downstream review and integration."
 
 details:
   gui_overview:
-    title: "GUI overview"
-    description: "Configure analysis settings, load optional ROIs, and run the AdiFind processing workflow from the desktop interface."
+    title: "User friendly interface"
+    description: "Configure analysis settings, and run the AdiFind processing workflow from a user friendly interface."
     image_path: "/images/adifind/paper_adifind_GUI.png"
     image_alt: "Screenshot of the AdiFind graphical user interface."
     caption: "Desktop interface for configuring and running analysis."
@@ -49,14 +49,14 @@ details:
       image_alt: "Freehand ROI selection before annotations are applied."
       caption: "Only want to analyze a specific tissue region?🤔"
 
-    - title: "Region of interest annotated output"
-      description: "Review the generated adipocyte annotations within the same selected ROI."
+    - title: "AdiFind supports any polygonal shape"
+      description: "Review the generated adipocyte annotations within the selected ROI."
       image_path: "/images/adifind/paper_ROI_frehand_annotated.png"
       image_alt: "Annotated ROI view showing the generated analysis output."
       caption: "Annotated output for the selected ROI."
 
   qupath_workflow_example:
-    title: "Using AdiFind results with existing QuPath workflows"
+    title: "Tired of exporting ROIs to ImageJ/AdipoSoft?"
     description: "Light green masks show AdiFind adipocyte results, while red dots show StarDist nuclei segmentation, demonstrating how AdiFind outputs can be used directly alongside existing QuPath workflows."
     image_path: "/images/adifind/adifind_stardist_example.png"
     image_alt: "QuPath view showing AdiFind adipocyte masks in light green together with StarDist nuclei detections in red."

@@ -221,6 +221,16 @@ html[data-theme="dark"] .adifind-lightbox {
   border-radius: $border-radius;
   box-shadow: 0 18px 48px rgba(#000, 0.3);
   overflow: hidden;
+
+  @include breakpoint($medium) {
+    width: auto;
+    max-width: 96vw;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
 }
 
 .adifind-lightbox__close {
@@ -251,6 +261,11 @@ html[data-theme="dark"] .adifind-lightbox {
   min-height: 12rem;
   padding: 1rem;
   background: #fff;
+
+  @include breakpoint($medium) {
+    min-height: 0;
+    padding: 0;
+  }
 }
 
 .adifind-lightbox__image {
