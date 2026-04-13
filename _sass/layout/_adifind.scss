@@ -111,6 +111,7 @@
 .adifind-process__body,
 .adifind-card__body {
   padding: 1rem;
+  color: var(--global-text-color);
 }
 
 .adifind-process--workflow .adifind-process__body {
@@ -127,7 +128,7 @@
 .adifind-card__caption {
   margin-bottom: 0.5rem;
   font-size: $type-size-7;
-  color: var(--global-text-color-light);
+  color: var(--global-text-color);
 }
 
 .adifind-process__title,
