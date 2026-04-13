@@ -63,7 +63,7 @@ details:
       caption: "AdiFind + QuPath = 🤝"
 
     - title: "QuPath close-up"
-      description: "Examine individual or groups adipocytes and adipocyte labels at higher magnification in QuPath."
+      description: "Examine individual or groups adipocytes and adipocyte labels. All annotations have their corresponding adipocyte size stored."
       image_path: "/images/adifind/AdiFind_QuPath_demo_zoomed_in.png"
       image_alt: "Zoomed QuPath view showing individual AdiFind adipocyte annotations."
-      caption: "Let AdiFind save your team hours of tedious work."
+      caption: "Let AdiFind save your team hours of tedious work⌛"
