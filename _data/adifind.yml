@@ -8,40 +8,31 @@ downloads:
 
 processing_section:
   workflow_panels:
-    - panel_label: "A"
-      title: "Whole-slide image pyramid"
+    - title: "Whole-slide image pyramid"
       image_path: "/images/adifind/Asset 1@4x.png"
       image_alt: "Whole-slide image pyramid illustrating multi-resolution access from downscaled to full-resolution tissue."
-      description: "Build a multi-resolution whole-slide image pyramid so the workflow can switch between rapid low-magnification context and full-resolution adipocyte analysis."
+      description: "Use a multi-resolution pyramid to move efficiently between whole-slide context and high-resolution adipocyte analysis."
 
-    - panel_label: "B"
-      title: "Downscaled 1X overview"
+    - title: "Downscaled 1X overview"
       image_path: "/images/adifind/Asset 14@4x.png"
       image_alt: "Downscaled 1X overview used for tumour detection and tissue guidance."
-      description: "Use a downscaled 1X overview for tumour detection and tissue guidance before the high-resolution inference stage begins."
+      description: "Detect tumour regions and derive tissue guidance from a downscaled 1X overview."
 
-    - panel_label: "C"
-      title: "Full-resolution preprocessing"
+    - title: "Full-resolution preprocessing"
       image_path: "/images/adifind/Asset 13@4x.png"
       image_alt: "Full-resolution preprocessing showing raw, inverted, Sobel-enhanced, and adipocyte-detection stages."
-      description: "At full resolution, invert and enhance tissue regions to highlight adipocyte boundaries and prepare local windows for robust adipocyte detection."
+      description: "At full resolution, preprocess tissue windows to highlight adipocyte boundaries for detection."
 
-    - panel_label: "D"
-      title: "Sliding-window inference"
+    - title: "Sliding-window inference"
       image_path: "/images/adifind/Asset 3@4x.png"
       image_alt: "Sliding-window inference with overlapping windows and reconciled adipocyte detections."
-      description: "Run sliding-window inference across the tissue region and reconcile overlapping detections across neighbouring windows."
+      description: "Run sliding-window inference and reconcile overlapping detections across neighbouring windows."
 
-  outcome_panels:
-    - title: "Annotated whole-slide output"
-      image_path: "/images/adifind/Asset 29@4x.png"
-      image_alt: "Annotated whole-slide image with tumour and adipose tissue context and a zoomed tumour-distance inset."
-      description: "Generate an annotated whole-slide output that combines tumour context, adipose annotation overlays, and tumour-distance-aware review views."
-
-    - title: "Distance-region map"
-      image_path: "/images/adifind/Distance_region_map@4x.png"
-      image_alt: "Distance-region map showing proximal, intermediate, and distal adipose compartments relative to the tumour."
-      description: "Map proximal, intermediate, and distal adipose regions relative to the tumour boundary to support distance-aware adipocyte summarisation."
+  annotated_panel:
+    title: "Annotated whole-slide output"
+    image_path: "/images/adifind/Asset 29@4x.png"
+    image_alt: "Annotated whole-slide image with tumour and adipose tissue context."
+    description: "Generate a whole-slide annotated output for tumour-aware review and downstream validation."
 
 details:
   gui_overview:

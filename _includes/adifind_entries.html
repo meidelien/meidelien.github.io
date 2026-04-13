@@ -1,6 +1,6 @@
 {% assign processing_section = site.data.adifind.processing_section %}
 {% assign workflow_panels = processing_section.workflow_panels %}
-{% assign outcome_panels = processing_section.outcome_panels %}
+{% assign annotated_panel = processing_section.annotated_panel %}
 {% assign details = site.data.adifind.details %}
 {% assign gui_overview = details.gui_overview %}
 {% assign roi_demo = details.roi_demo %}
@@ -21,9 +21,6 @@
 
         <article class="adifind-process__item">
           <div class="adifind-process__body">
-            {% if panel.panel_label %}
-              <p class="adifind-process__step">{{ panel.panel_label }}</p>
-            {% endif %}
             <h3 class="adifind-process__title">{{ panel.title }}</h3>
             {% if panel.description %}
               <p class="adifind-process__caption">{{ panel.description }}</p>
@@ -36,29 +33,27 @@
       {% endfor %}
     </div>
 
-    {% if outcome_panels and outcome_panels.size > 0 %}
-      <div class="adifind-process adifind-process--outcomes">
-        {% for panel in outcome_panels %}
-          {% include base_path %}
+    {% if annotated_panel %}
+      {% include base_path %}
 
-          {% if panel.image_path contains "://" %}
-            {% assign panel_image = panel.image_path %}
-          {% else %}
-            {% assign panel_image = panel.image_path | prepend: base_path %}
-          {% endif %}
+      {% if annotated_panel.image_path contains "://" %}
+        {% assign annotated_panel_image = annotated_panel.image_path %}
+      {% else %}
+        {% assign annotated_panel_image = annotated_panel.image_path | prepend: base_path %}
+      {% endif %}
 
-          <article class="adifind-process__item">
-            <div class="adifind-process__body">
-              <h3 class="adifind-process__title">{{ panel.title }}</h3>
-              {% if panel.description %}
-                <p class="adifind-process__caption">{{ panel.description }}</p>
-              {% endif %}
-            </div>
-            <figure class="adifind-process__media">
-              <img src="{{ panel_image }}" alt="{{ panel.image_alt }}">
-            </figure>
-          </article>
-        {% endfor %}
+      <div class="adifind-process adifind-process--annotated">
+        <article class="adifind-process__item adifind-process__item--wide">
+          <div class="adifind-process__body">
+            <h3 class="adifind-process__title">{{ annotated_panel.title }}</h3>
+            {% if annotated_panel.description %}
+              <p class="adifind-process__caption">{{ annotated_panel.description }}</p>
+            {% endif %}
+          </div>
+          <figure class="adifind-process__media">
+            <img src="{{ annotated_panel_image }}" alt="{{ annotated_panel.image_alt }}">
+          </figure>
+        </article>
       </div>
     {% endif %}
   </section>

@@ -53,18 +53,10 @@
   @include breakpoint($medium) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  @include breakpoint($large) {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
 }
 
-.adifind-process--outcomes {
+.adifind-process--annotated {
   margin-top: 1.5rem;
-
-  @include breakpoint($medium) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 .adifind-process__item,
@@ -82,12 +74,13 @@
 .adifind-process__media,
 .adifind-card__media {
   margin: 0;
-  background: mix(#fff, #000, 96%);
+  background: #fff;
 
   img {
     display: block;
     width: 100%;
     height: auto;
+    object-fit: contain;
   }
 }
 
@@ -100,15 +93,6 @@
   @include breakpoint($medium) {
     min-height: 14rem;
   }
-}
-
-.adifind-process__step {
-  margin-bottom: 0.5rem;
-  font-size: $type-size-7;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--global-text-color-light);
 }
 
 .adifind-process__caption,
