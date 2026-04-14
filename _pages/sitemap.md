@@ -5,33 +5,45 @@ permalink: /sitemap/
 author_profile: true
 ---
 
-{% include base_path %}
+A human-readable index of the public pages on this site. For crawlers and other automated tools, the [XML sitemap]({{ '/sitemap.xml' | relative_url }}) is also available.
 
-A list of all the posts and pages found on the site. For you robots out there, there is an [XML version]({{ base_path }}/sitemap.xml) available for digesting as well.
+{% assign sorted_pages = site.pages | sort: "title" %}
+{% assign sorted_portfolio = site.portfolio | sort: "title" %}
+{% assign sorted_publications = site.publications | sort: "date" | reverse %}
 
 <h2>Pages</h2>
-{% for post in site.pages %}
-  {% include archive-single.html %}
-{% endfor %}
+<ul>
+  {% for item in sorted_pages %}
+    {% if item.path contains '_pages/' and item.sitemap != false and item.url and item.title and item.url != '/404.html' and item.url != page.url %}
+      <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
 
-<h2>Posts</h2>
-{% for post in site.posts %}
-  {% include archive-single.html %}
-{% endfor %}
+<h2>Portfolio</h2>
+<ul>
+  {% for item in sorted_portfolio %}
+    {% if item.sitemap != false and item.url and item.title %}
+      <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
 
-{% capture written_label %}'None'{% endcapture %}
-
-{% for collection in site.collections %}
-{% unless collection.output == false or collection.label == "posts" %}
-  {% capture label %}{{ collection.label }}{% endcapture %}
-  {% if label != written_label %}
-  <h2>{{ label }}</h2>
-  {% capture written_label %}{{ label }}{% endcapture %}
-  {% endif %}
-{% endunless %}
-{% for post in collection.docs %}
-  {% unless collection.output == false or collection.label == "posts" %}
-  {% include archive-single.html %}
-  {% endunless %}
-{% endfor %}
-{% endfor %}
+<h2>Publications</h2>
+<ul>
+  {% for item in sorted_publications %}
+    {% if item.sitemap != false and item.url and item.title %}
+      <li>
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {% if item.date or item.venue %}
+          <br>
+          <small>
+            {% if item.date %}{{ item.date | date: "%B %d, %Y" }}{% endif %}
+            {% if item.date and item.venue %} | {% endif %}
+            {% if item.venue %}{{ item.venue }}{% endif %}
+          </small>
+        {% endif %}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
