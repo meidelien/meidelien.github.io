@@ -187,6 +187,9 @@
         <p class="adifind2-panel__eyebrow">Desktop workflow</p>
         <h3 class="adifind2-panel__title">{{ gui_overview.title }}</h3>
         <p>{{ gui_overview.description }}</p>
+        {% if gui_overview.secondary_description %}
+          <p>{{ gui_overview.secondary_description }}</p>
+        {% endif %}
         {% if gui_overview.caption %}
           <p class="adifind2-panel__caption">{{ gui_overview.caption }}</p>
         {% endif %}

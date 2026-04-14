@@ -82,6 +82,7 @@ workflow_fit:
   gui_overview:
     title: "Desktop interface"
     description: "Configure analysis settings and run AdiFind from a user-friendly desktop interface."
+    secondary_description: "AdiFind is also accessible through a command-line interface, making it suitable for batch processing, scripted execution, and integration into existing computational pathology workflows."
     image_path: "/images/adifind/paper_adifind_GUI.png"
     image_alt: "Screenshot of the AdiFind desktop interface."
     caption: "Desktop interface for configuring and running analysis."
