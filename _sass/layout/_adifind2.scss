@@ -125,15 +125,21 @@
 }
 
 .adifind2-page .adifind2-hero__actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 0.85rem;
+
+  @include breakpoint($medium) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+  }
 }
 
 .adifind2-page .adifind2-hero__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   min-height: 3rem;
   padding: 0.85rem 1.35rem;
   font-size: 0.95rem;
@@ -143,10 +149,6 @@
   letter-spacing: -0.01em;
   text-decoration: none !important;
   box-shadow: 0 12px 30px rgba(9, 18, 33, 0.16);
-
-  @include breakpoint($medium) {
-    min-width: 15rem;
-  }
 }
 
 .adifind2-page .adifind2-hero__button.btn--inverse {
