@@ -260,6 +260,10 @@
   }
 }
 
+.adifind2-page .adifind2-grid--showcase {
+  grid-template-columns: 1fr;
+}
+
 .adifind2-page .adifind2-panel {
   display: flex;
   flex-direction: column;
@@ -290,6 +294,24 @@
 
 .adifind2-page .adifind2-panel--output {
   border-top: 5px solid var(--adifind2-teal);
+}
+
+.adifind2-page .adifind2-panel--showcase {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.adifind2-page .adifind2-panel--showcase .adifind2-panel__content {
+  padding-bottom: 1rem;
+}
+
+.adifind2-page .adifind2-panel--showcase .adifind2-panel__media {
+  border-top: 1px solid var(--global-border-color);
+}
+
+.adifind2-page .adifind2-panel--showcase .adifind-lightbox-trigger {
+  display: block;
+  width: 100%;
 }
 
 .adifind2-page .adifind2-panel__content {
