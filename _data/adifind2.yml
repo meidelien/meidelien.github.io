@@ -81,7 +81,7 @@ workflow_fit:
   title: "Fits into existing pathology workflows"
   gui_overview:
     title: "Desktop interface"
-    description: "Configure analysis settings and run the AdiFind workflow from a user-friendly desktop interface."
+    description: "Configure analysis settings and run AdiFind from a user-friendly desktop interface."
     image_path: "/images/adifind/paper_adifind_GUI.png"
     image_alt: "Screenshot of the AdiFind desktop interface."
     caption: "Desktop interface for configuring and running analysis."
