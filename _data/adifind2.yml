@@ -1,13 +1,13 @@
 hero:
   eyebrow: "Research software for digital pathology"
-  title: "Whole-slide adipocyte segmentation and tumor-proximity analysis"
+  title: "AdiFind: Whole-slide adipocyte segmentation and tumor-proximity analysis"
   subtitle: "Measure adipocyte size, spatial context, and tumor distance from gigapixel histology slides, with QuPath-ready outputs."
   primary_cta:
     label: "Download sample results"
     path: "/files/adifind/K106942_AdiFind.zip"
   secondary_cta:
     label: "Download sample .svs"
-    path: "/files/adifind/K106942.svs"
+    path: "/files/adifind/K106942.svs"s
   tertiary_cta:
     label: "Request a demo"
     path: "#contact"
