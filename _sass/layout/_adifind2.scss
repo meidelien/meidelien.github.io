@@ -289,6 +289,23 @@
   grid-template-columns: 1fr;
 }
 
+.adifind2-page .adifind2-workflow-fit__content,
+.adifind2-page .adifind2-workflow-fit__stack {
+  display: grid;
+  gap: 1.35rem;
+}
+
+@include breakpoint($medium) {
+  .adifind2-page .adifind2-workflow-fit__content,
+  .adifind2-page .adifind2-workflow-fit__stack {
+    gap: 1.8rem;
+  }
+
+  .adifind2-page .adifind2-section--workflow-fit .adifind2-grid--pair {
+    gap: 1.8rem 1.35rem;
+  }
+}
+
 .adifind2-page .adifind2-panel {
   display: flex;
   flex-direction: column;

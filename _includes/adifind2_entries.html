@@ -178,82 +178,86 @@
     </div>
   </section>
 
-  <section class="adifind2-section" aria-labelledby="adifind2-workflows-title">
+  <section class="adifind2-section adifind2-section--workflow-fit" aria-labelledby="adifind2-workflows-title">
     <p class="adifind2-section__eyebrow">Workflow Fit</p>
     <h2 class="adifind2-section__title" id="adifind2-workflows-title">{{ workflow_fit.title }}</h2>
 
-    <article class="adifind2-panel adifind2-panel--feature">
-      <div class="adifind2-panel__content">
-        <p class="adifind2-panel__eyebrow">Desktop workflow</p>
-        <h3 class="adifind2-panel__title">{{ gui_overview.title }}</h3>
-        <p>{{ gui_overview.description }}</p>
-        {% if gui_overview.secondary_description %}
-          <p>{{ gui_overview.secondary_description }}</p>
-        {% endif %}
-        {% if gui_overview.caption %}
-          <p class="adifind2-panel__caption">{{ gui_overview.caption }}</p>
-        {% endif %}
+    <div class="adifind2-workflow-fit__content">
+      <article class="adifind2-panel adifind2-panel--feature">
+        <div class="adifind2-panel__content">
+          <p class="adifind2-panel__eyebrow">Desktop workflow</p>
+          <h3 class="adifind2-panel__title">{{ gui_overview.title }}</h3>
+          <p>{{ gui_overview.description }}</p>
+          {% if gui_overview.secondary_description %}
+            <p>{{ gui_overview.secondary_description }}</p>
+          {% endif %}
+          {% if gui_overview.caption %}
+            <p class="adifind2-panel__caption">{{ gui_overview.caption }}</p>
+          {% endif %}
+        </div>
+        <figure class="adifind2-panel__media">
+          <button
+            type="button"
+            class="adifind-lightbox-trigger"
+            aria-label="View {{ gui_overview.title | escape }} larger"
+            data-image-src="{{ gui_overview_image }}"
+            data-image-alt="{{ gui_overview.image_alt | escape }}">
+            <img src="{{ gui_overview_image }}" alt="{{ gui_overview.image_alt }}">
+          </button>
+        </figure>
+      </article>
+
+      <div class="adifind2-workflow-fit__stack">
+        <div class="adifind2-grid adifind2-grid--pair">
+          {% for entry in roi_demo %}
+            {% assign roi_image = entry.image_path | prepend: base_path %}
+            <article class="adifind2-panel">
+              <figure class="adifind2-panel__media">
+                <button
+                  type="button"
+                  class="adifind-lightbox-trigger"
+                  aria-label="View {{ entry.title | escape }} larger"
+                  data-image-src="{{ roi_image }}"
+                  data-image-alt="{{ entry.image_alt | escape }}">
+                  <img src="{{ roi_image }}" alt="{{ entry.image_alt }}">
+                </button>
+              </figure>
+              <div class="adifind2-panel__content">
+                <h3 class="adifind2-panel__title">{{ entry.title }}</h3>
+                <p>{{ entry.description }}</p>
+                {% if entry.caption %}
+                  <p class="adifind2-panel__caption">{{ entry.caption }}</p>
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+
+        <div class="adifind2-grid adifind2-grid--pair">
+          {% for entry in qupath_demo %}
+            {% assign qupath_image = entry.image_path | prepend: base_path %}
+            <article class="adifind2-panel">
+              <figure class="adifind2-panel__media">
+                <button
+                  type="button"
+                  class="adifind-lightbox-trigger"
+                  aria-label="View {{ entry.title | escape }} larger"
+                  data-image-src="{{ qupath_image }}"
+                  data-image-alt="{{ entry.image_alt | escape }}">
+                  <img src="{{ qupath_image }}" alt="{{ entry.image_alt }}">
+                </button>
+              </figure>
+              <div class="adifind2-panel__content">
+                <h3 class="adifind2-panel__title">{{ entry.title }}</h3>
+                <p>{{ entry.description }}</p>
+                {% if entry.caption %}
+                  <p class="adifind2-panel__caption">{{ entry.caption }}</p>
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
       </div>
-      <figure class="adifind2-panel__media">
-        <button
-          type="button"
-          class="adifind-lightbox-trigger"
-          aria-label="View {{ gui_overview.title | escape }} larger"
-          data-image-src="{{ gui_overview_image }}"
-          data-image-alt="{{ gui_overview.image_alt | escape }}">
-          <img src="{{ gui_overview_image }}" alt="{{ gui_overview.image_alt }}">
-        </button>
-      </figure>
-    </article>
-
-    <div class="adifind2-grid adifind2-grid--pair">
-      {% for entry in roi_demo %}
-        {% assign roi_image = entry.image_path | prepend: base_path %}
-        <article class="adifind2-panel">
-          <figure class="adifind2-panel__media">
-            <button
-              type="button"
-              class="adifind-lightbox-trigger"
-              aria-label="View {{ entry.title | escape }} larger"
-              data-image-src="{{ roi_image }}"
-              data-image-alt="{{ entry.image_alt | escape }}">
-              <img src="{{ roi_image }}" alt="{{ entry.image_alt }}">
-            </button>
-          </figure>
-          <div class="adifind2-panel__content">
-            <h3 class="adifind2-panel__title">{{ entry.title }}</h3>
-            <p>{{ entry.description }}</p>
-            {% if entry.caption %}
-              <p class="adifind2-panel__caption">{{ entry.caption }}</p>
-            {% endif %}
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-
-    <div class="adifind2-grid adifind2-grid--pair">
-      {% for entry in qupath_demo %}
-        {% assign qupath_image = entry.image_path | prepend: base_path %}
-        <article class="adifind2-panel">
-          <figure class="adifind2-panel__media">
-            <button
-              type="button"
-              class="adifind-lightbox-trigger"
-              aria-label="View {{ entry.title | escape }} larger"
-              data-image-src="{{ qupath_image }}"
-              data-image-alt="{{ entry.image_alt | escape }}">
-              <img src="{{ qupath_image }}" alt="{{ entry.image_alt }}">
-            </button>
-          </figure>
-          <div class="adifind2-panel__content">
-            <h3 class="adifind2-panel__title">{{ entry.title }}</h3>
-            <p>{{ entry.description }}</p>
-            {% if entry.caption %}
-              <p class="adifind2-panel__caption">{{ entry.caption }}</p>
-            {% endif %}
-          </div>
-        </article>
-      {% endfor %}
     </div>
   </section>
 
