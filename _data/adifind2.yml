@@ -7,7 +7,7 @@ hero:
     path: "/files/adifind/K106942_AdiFind.zip"
   secondary_cta:
     label: "Download sample .svs"
-    path: "/files/adifind/K106942.svs"s
+    path: "/files/adifind/K106942.svs"
   tertiary_cta:
     label: "Request a demo"
     path: "#contact"
