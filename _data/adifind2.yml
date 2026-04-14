@@ -9,7 +9,7 @@ hero:
     label: "Download sample .svs"
     path: "/files/adifind/K106942.svs"
   tertiary_cta:
-    label: "Request a demo"
+    label: "Contact"
     path: "#contact"
 
 proof_strip:
