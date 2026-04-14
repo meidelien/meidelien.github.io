@@ -3,13 +3,13 @@ hero:
   title: "Whole-slide adipocyte segmentation and tumor-proximity analysis"
   subtitle: "Measure adipocyte size, spatial context, and tumor distance from gigapixel histology slides, with QuPath-ready outputs."
   primary_cta:
-    label: "Download example results"
+    label: "Download sample results"
     path: "/files/adifind/K106942_AdiFind.zip"
   secondary_cta:
-    label: "Download example .svs"
+    label: "Download sample .svs"
     path: "/files/adifind/K106942.svs"
   tertiary_cta:
-    label: "Contact / request demo"
+    label: "Request a demo"
     path: "#contact"
 
 proof_strip:
@@ -44,15 +44,15 @@ showcase:
   featured_panel:
     title: "Annotated whole-slide output"
     image_path: "/images/adifind/Asset 29@4x.png"
-    image_alt: "Annotated whole-slide image with tumour and adipose tissue context."
-    description: "AdiFind produces whole-slide overlays and export files that are ready for review, quantification, and downstream integration."
+    image_alt: "Annotated whole-slide image with tumor and adipose tissue context."
+    description: "AdiFind generates whole-slide overlays and export files ready for review, quantification, and downstream integration."
 
   integration_panel:
     title: "QuPath integration"
     image_path: "/images/adifind/adifind_stardist_example.png"
     image_alt: "QuPath view showing AdiFind adipocyte masks in light green together with StarDist nuclei detections in red."
-    description: "AdiFind outputs can be used directly alongside existing QuPath workflows, including nuclear segmentation and spatial annotation pipelines."
-    caption: "AdiFind + QuPath = 🤝"
+    description: "AdiFind outputs integrate directly with existing QuPath workflows, including nuclear segmentation and spatial annotation pipelines."
+    caption: "Compatible with QuPath-based workflows."
 
 processing_section:
   title: "How it works"
@@ -64,7 +64,7 @@ processing_section:
 
     - title: "Guided tissue overview"
       image_path: "/images/adifind/Asset 14@4x.png"
-      image_alt: "Downscaled 1X overview used for tumour detection and tissue guidance."
+      image_alt: "Downscaled 1X overview used for tumor detection and tissue guidance."
       description: "A downscaled overview is used for tissue guidance and optional tumor analysis before high-resolution inference."
 
     - title: "Full-resolution detection"
@@ -80,10 +80,10 @@ processing_section:
 workflow_fit:
   title: "Fits into existing pathology workflows"
   gui_overview:
-    title: "User interface"
+    title: "Desktop interface"
     description: "Configure analysis settings and run the AdiFind workflow from a user-friendly desktop interface."
     image_path: "/images/adifind/paper_adifind_GUI.png"
-    image_alt: "Screenshot of the AdiFind graphical user interface."
+    image_alt: "Screenshot of the AdiFind desktop interface."
     caption: "Desktop interface for configuring and running analysis."
 
   roi_demo:
@@ -104,13 +104,13 @@ workflow_fit:
       description: "Review exported AdiFind annotations directly in QuPath."
       image_path: "/images/adifind/AdiFind_QuPath_demo.png"
       image_alt: "QuPath overview displaying imported AdiFind annotations on the example slide."
-      caption: "AdiFind + QuPath = 🤝"
+      caption: "Review AdiFind results directly in QuPath."
 
     - title: "Inspect measurements in context"
       description: "Zoom to individual adipocytes and inspect stored measurements alongside existing QuPath annotations."
       image_path: "/images/adifind/AdiFind_QuPath_demo_zoomed_in.png"
       image_alt: "Zoomed QuPath view showing individual AdiFind adipocyte annotations."
-      caption: "Keep adipocyte sizing inside your QuPath workflow."
+      caption: "Review adipocyte measurements alongside QuPath annotations."
 
 validation:
   title: "Validated at scale"
@@ -122,18 +122,18 @@ validation:
       label: "Adipocytes measured"
 
 downloads:
-  title: "Try the example data"
+  title: "Download sample data"
   svs:
-    label: "Download example whole-slide image (.svs)"
+    label: "Download sample whole-slide image (.svs)"
     path: "/files/adifind/K106942.svs"
   validation_zip:
-    label: "Download example AdiFind outputs (.zip)"
+    label: "Download sample AdiFind outputs (.zip)"
     path: "/files/adifind/K106942_AdiFind.zip"
 
 footer_cta:
   id: "contact"
   title: "Interested in using AdiFind?"
-  description: "Contact Martin Eide Lien for collaboration or demo requests."
+  description: "Contact Martin Eide Lien for collaboration inquiries or demo requests."
   email_display: "martin [dot] lien [at] uib [dot] no"
   email_parts:
     user: "martin.lien"
