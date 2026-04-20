@@ -357,6 +357,22 @@
   width: 100%;
 }
 
+.adifind2-page .adifind2-panel--showcase .adifind2-panel__media--stacked {
+  display: grid;
+  gap: 0;
+}
+
+.adifind2-page .adifind2-panel--showcase .adifind2-panel__media-item {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.adifind2-page .adifind2-panel--showcase .adifind2-panel__media-item + .adifind2-panel__media-item {
+  border-top: 1px solid var(--global-border-color);
+}
+
 .adifind2-page .adifind2-panel__content {
   padding: 1.25rem;
 }
