@@ -87,20 +87,20 @@ workflow_fit:
     secondary_description: "AdiFind is also accessible through a command-line interface, making it suitable for batch processing, scripted execution, and integration into existing computational pathology workflows."
     image_path: "/images/adifind/paper_adifind_GUI.png"
     image_alt: "Screenshot of the AdiFind desktop interface."
-    caption: "Desktop interface for configuring and running analysis."
+
 
   roi_demo:
     - title: "Restrict analysis to a chosen region"
       description: "Draw a freehand or polygonal ROI to limit analysis to the tissue region you want to measure."
       image_path: "/images/adifind/paper_ROI_frehand.png"
       image_alt: "Freehand ROI selection before annotations are applied."
-      caption: "ROI-restricted analysis."
+
 
     - title: "Review ROI-specific results"
       description: "Inspect adipocyte annotations generated within the selected region of interest."
       image_path: "/images/adifind/paper_ROI_frehand_annotated.png"
       image_alt: "Annotated ROI view showing the generated analysis output."
-      caption: "Annotated output within the selected ROI."
+
 
   qupath_demo:
     - title: "Import into QuPath"
@@ -113,7 +113,7 @@ workflow_fit:
       description: "Zoom to individual adipocytes and inspect stored measurements alongside existing QuPath annotations."
       image_path: "/images/adifind/AdiFind_QuPath_demo_zoomed_in.png"
       image_alt: "Zoomed QuPath view showing individual AdiFind adipocyte annotations."
-      caption: "Review adipocyte measurements alongside QuPath annotations."
+      caption: "Review AdiFind adipocyte measurements alongside other QuPath annotations."
 
 validation:
   title: "Validated at scale"
