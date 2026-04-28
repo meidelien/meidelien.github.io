@@ -22,7 +22,7 @@ Education
   **Project title:** *Computer vision-based analysis of adipocyte-tumour associations*  
   **Supervisor:** Nils Henrik Halberg
 
-* **Visiting PhD Student**, Queensland Institute of Medical Research, Australia - *May 2025-present*  
+* **Visiting PhD Student**, Queensland Institute of Medical Research, Australia - *May 2025-May 2026*  
   **Host lab:** Cancer Metabolism  
   **Project title:** *Computer vision-based analysis of adipocyte-tumour associations*  
   **Friend, fellow nerd & collaborator:** Khoa Tran
