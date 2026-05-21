@@ -24,6 +24,8 @@ author_profile: true
         {% unless status contains "unpublished" %}
           {% assign status_allowed = true %}
         {% endunless %}
+      {% elsif status contains "preprint" %}
+        {% assign status_allowed = true %}
       {% endif %}
       {% if post.category == category[0] and status_allowed %}
         {% unless title_shown %}
@@ -46,6 +48,8 @@ author_profile: true
       {% unless status contains "unpublished" %}
         {% assign status_allowed = true %}
       {% endunless %}
+    {% elsif status contains "preprint" %}
+      {% assign status_allowed = true %}
     {% endif %}
     {% if status_allowed %}
       {% include archive-single.html %}
